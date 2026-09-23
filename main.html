@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 1: Fundamentos de Redacción y Conectores de Tiempo</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --primary: #6366f1;
+            --primary-light: #e0e7ff;
+            --subject-color: #dcfce7; /* Verde claro */
+            --subject-text: #166534;
+            --verb-color: #dbeafe; /* Azul claro */
+            --verb-text: #1e40af;
+            --connector-color: #fef3c7; /* Amarillo/Naranja claro */
+            --connector-text: #92400e;
+            --complement-color: #f3e8ff; /* Púrpura claro */
+            --complement-text: #6b21a8;
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #a5b4fc, #c084fc);
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        h1 { margin: 0; font-size: 2rem; }
+        .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 5px; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* Checkbox interactivo */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            user-select: none;
+            background: #f1f5f9;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .checkbox-container input {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        /* Resaltadores visuales por código de color */
+        .hl-subject { background-color: var(--subject-color); color: var(--subject-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .hl-verb { background-color: var(--verb-color); color: var(--verb-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .hl-connector { background-color: var(--connector-color); color: var(--connector-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .hl-complement { background-color: var(--complement-color); color: var(--complement-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+
+        /* Estructura gramatical visual */
+        .formula-box {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            background: #fafafa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed #cbd5e1;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+            margin-top: 8px;
+        }
+
+        .pause-card {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+            text-align: center;
+        }
+
+        .meta-box {
+            background: #fdf2f8;
+            border-left: 4px solid #f472b6;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .meta-title { font-weight: bold; color: #db2777; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Lección 1: Fundamentos de Redacción</h1>
+        <div class="subtitle">Estructura de Oraciones y Conectores de Tiempo (90 Minutos)</div>
+    </header>
+
+    <!-- LEYENDA CÓDIGO DE COLORES -->
+    <div class="card">
+        <h3>🎨 Guía Visual de Código de Colores</h3>
+        <p>Para identificar rápidamente cada elemento gramatical durante la lección:</p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span class="hl-connector">Conector de Orden</span>
+            <span class="hl-subject">Sujeto</span>
+            <span class="hl-verb">Verbo Acción</span>
+            <span class="hl-complement">Complemento / Hora</span>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 1: TEORÍA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>1. Teoría Leve: Presente Simple y Conectores</h2>
+            <span class="tag">15 min</span>
+        </div>
+        <p>Estructura básica para construir oraciones breves y claras:</p>
+        
+        <div class="formula-box">
+            <span class="hl-connector">[Conector]</span> + 
+            <span class="hl-subject">[Sujeto]</span> + 
+            <span class="hl-verb">[Verbo]</span> + 
+            <span class="hl-complement">[Complemento]</span>
+        </div>
+
+        <h4>Conectores de Orden (Sequence Connectors):</h4>
+        <ul>
+            <li><span class="hl-connector">First</span> (Primero) - Inicio de la rutina.</li>
+            <li><span class="hl-connector">Next / Then</span> (Luego / Después) - Acciones intermedias.</li>
+            <li><span class="hl-connector">After that</span> (Después de eso) - Transición.</li>
+            <li><span class="hl-connector">Finally</span> (Finalmente) - Última acción.</li>
+        </ul>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>¡Entendido! Domino la estructura teórica y los 5 conectores.</span>
+        </label>
+    </div>
+
+    <!-- SECCIÓN 2: PRÁCTICA GUIADA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>2. Práctica Guiada: Mi Día en Oraciones</h2>
+            <span class="tag">30 min</span>
+        </div>
+        
+        <p><strong>Paso A (I Do / We Do):</strong> Responde ¿Qué hiciste hoy? Escribe 4 oraciones sueltas en inglés:</p>
+        
+        <div style="margin-bottom: 15px;">
+            <label>1. Primera acción del día:</label>
+            <input type="text" placeholder="Ej: I wake up at 7:00 AM">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>2. Segunda acción:</label>
+            <input type="text" placeholder="Ej: I take a shower">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>3. Tercera acción:</label>
+            <input type="text" placeholder="Ej: I have breakfast">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>4. Última acción:</label>
+            <input type="text" placeholder="Ej: I study English">
+        </div>
+
+        <p><strong>Paso B (Unión con Conectores):</strong> Une tus oraciones anteriores usando conectores para formar un único párrafo fluido:</p>
+        <div class="card" style="background: #fafafa;">
+            <p><em>Ejemplo de referencia:</em> <span class="hl-connector">First</span>, <span class="hl-subject">I</span> <span class="hl-verb">wake up</span> <span class="hl-complement">at 7:00 AM</span>. <span class="hl-connector">Next</span>, <span class="hl-subject">I</span> <span class="hl-verb">take</span> <span class="hl-complement">a shower</span>. <span class="hl-connector">After that</span>, <span class="hl-subject">I</span> <span class="hl-verb">have</span> <span class="hl-complement">breakfast</span>. <span class="hl-connector">Finally</span>, <span class="hl-subject">I</span> <span class="hl-verb">study</span> <span class="hl-complement">English</span>.</p>
+        </div>
+        
+        <textarea rows="4" placeholder="Escribe aquí tu párrafo completo uniendo las oraciones..."></textarea>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Párrafo redactado y verificado con código de colores.</span>
+        </label>
+    </div>
+
+    <!-- SECCIÓN 3: PAUSA Y DESCANSO -->
+    <div class="card pause-card">
+        <h3>☕ Pausa de Recarga Active</h3>
+        <p><strong>Tiempo: 10 minutos</strong> - Momento de descansar la vista, estirarse o tomar agua antes del taller práctico.</p>
+        <label class="checkbox-container" style="justify-content: center; background: white;">
+            <input type="checkbox">
+            <span>Descanso completado. ¡Listos para continuar!</span>
+        </label>
+    </div>
+
+    <!-- SECCIÓN 4: TALLER ELA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>4. Taller ELA: Lectura y Secuencia de Eventos</h2>
+            <span class="tag">25 min</span>
+        </div>
+        <p>Lee el siguiente texto corto y selecciona el orden correcto de los eventos:</p>
+        
+        <blockquote style="background: #f8fafc; padding: 15px; border-left: 4px solid var(--primary); margin: 15px 0;">
+            "Sarah is preparing for her exam. <strong>First</strong>, she organizes her notes on the desk. <strong>Next</strong>, she reads chapters 1 and 2. <strong>After that</strong>, she writes a summary paragraph. <strong>Finally</strong>, she sleeps early to rest."
+        </blockquote>
+
+        <p><strong>Pregunta:</strong> ¿Qué hace Sarah inmediatamente <em>después</em> de leer los capítulos 1 y 2?</p>
+        <div>
+            <label><input type="radio" name="q1"> A) Organiza sus notas en el escritorio.</label><br>
+            <label><input type="radio" name="q1"> B) Escribe un párrafo de resumen.</label><br>
+            <label><input type="radio" name="q1"> C) Duerme temprano para descansar.</label>
+        </div>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Ejercicio resuelto e identificado correctamente.</span>
+        </label>
+    </div>
+
+    <!-- SECCIÓN 5: CIERRE Y METAS SMART (REVISIÓN FINAL) -->
+    <div class="card">
+        <div class="section-header">
+            <h2>5. Cierre y Metas SMART de Progreso</h2>
+            <span class="tag">10 min</span>
+        </div>
+        <p>Para finalizar la lección, repasamos los 3 niveles de metas configurados para garantizar tu éxito hacia BYU–Pathway:</p>
+
+        <!-- Meta Diaria de esta Clase -->
+        <div class="meta-box">
+            <div class="meta-title">🎯 Meta SMART de esta Clase (Lograda Hoy):</div>
+            <p>"Completar un diagrama visual con código de colores e identificar correctamente 5 conectores de secuencia (first, next, then, after that, finally) en un texto corto de lectura."[cite: 5, 6]</p>
+        </div>
+
+        <!-- Meta Semanal / Trabajo Autónomo -->
+        <div class="meta-box" style="border-left-color: #818cf8;">
+            <div class="meta-title" style="color: #4f46e5;">📌 Meta SMART Semanal (Fuera de clase)[cite: 5, 6]:</div>
+            <p>"Escribir 1 párrafo diario de 4 a 5 oraciones en inglés sobre mis actividades cotidianas usando conectores de secuencia (first, then, after that, finally) de lunes a sábado (6 párrafos en total) en mi libreta para dominar la primera pregunta del examen ELA."[cite: 5, 6]</p>
+        </div>
+
+        <!-- Meta del Mes / General -->
+        <div class="meta-box" style="border-left-color: #34d399;">
+            <div class="meta-title" style="color: #059669;">🏆 Meta SMART General del Mes ( BYU–Pathway )[cite: 5, 6]:</div>
+            <p>"Completar 8 sesiones de estudio asistido y 24 actividades autónomas en 4 semanas para responder con confianza el test de práctica de lectura (Reading)[cite: 6] y redactar los 2 textos del examen ELA[cite: 5, 6] obteniendo una autoevaluación superior al 80% para postular a BYU–Pathway."[cite: 6]</p>
+        </div>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Clase 1 completada y metas acordadas para la semana.</span>
+        </label>
+    </div>
+
+</div>
+
+</body>
+</html>
