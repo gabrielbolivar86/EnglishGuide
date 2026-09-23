@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección 1: Fundamentos de Redacción y Conectores de Tiempo</title>
+    <title>Lección 1: Conectores y Estructura de Oraciones</title>
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -19,7 +19,11 @@
             --connector-text: #92400e;
             --complement-color: #f3e8ff; /* Púrpura claro */
             --complement-text: #6b21a8;
-            --border-radius: 12px;
+            --success-bg: #d1fae5;
+            --success-text: #065f46;
+            --error-bg: #fee2e2;
+            --error-text: #991b1b;
+            --border-radius: 14px;
         }
 
         body {
@@ -32,87 +36,105 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
         }
 
         header {
-            background: linear-gradient(135deg, #a5b4fc, #c084fc);
+            background: linear-gradient(135deg, #818cf8, #c084fc);
             color: white;
-            padding: 30px;
+            padding: 28px;
             border-radius: var(--border-radius);
             text-align: center;
             margin-bottom: 25px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
         }
 
-        h1 { margin: 0; font-size: 2rem; }
-        .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 5px; }
+        h1 { margin: 0; font-size: 2.1rem; }
+        .subtitle { font-size: 1.05rem; opacity: 0.95; margin-top: 6px; }
 
         .card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 22px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
             border: 1px solid #e2e8f0;
         }
 
-        .section-header {
+        .section-title {
+            font-size: 1.35rem;
+            color: #1e293b;
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
         }
 
-        .tag {
-            background-color: var(--primary-light);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
+        /* Resaltadores gramaticales */
+        .hl-connector { background-color: var(--connector-color); color: var(--connector-text); padding: 3px 8px; border-radius: 6px; font-weight: 700; }
+        .hl-subject { background-color: var(--subject-color); color: var(--subject-text); padding: 3px 8px; border-radius: 6px; font-weight: 700; }
+        .hl-verb { background-color: var(--verb-color); color: var(--verb-text); padding: 3px 8px; border-radius: 6px; font-weight: 700; }
+        .hl-complement { background-color: var(--complement-color); color: var(--complement-text); padding: 3px 8px; border-radius: 6px; font-weight: 700; }
+
+        .color-legend {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            background: #f8fafc;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Ejemplos destacados visuales */
+        .example-box {
+            background: #ffffff;
+            border: 2px solid #e0e7ff;
+            border-radius: 12px;
+            padding: 18px;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+        }
+
+        .example-tag {
+            font-size: 0.82rem;
             font-weight: bold;
-            font-size: 0.85rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
-        /* Checkbox interactivo */
+        /* Checkboxes interactivos de avance */
         .checkbox-container {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1rem;
+            gap: 12px;
+            font-size: 0.98rem;
             cursor: pointer;
             user-select: none;
             background: #f1f5f9;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin-top: 15px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            margin-top: 18px;
+            transition: background 0.2s;
+        }
+
+        .checkbox-container:hover {
+            background: #e2e8f0;
         }
 
         .checkbox-container input {
             width: 20px;
             height: 20px;
+            accent-color: var(--primary);
             cursor: pointer;
-        }
-
-        /* Resaltadores visuales por código de color */
-        .hl-subject { background-color: var(--subject-color); color: var(--subject-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
-        .hl-verb { background-color: var(--verb-color); color: var(--verb-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
-        .hl-connector { background-color: var(--connector-color); color: var(--connector-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
-        .hl-complement { background-color: var(--complement-color); color: var(--complement-text); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
-
-        /* Estructura gramatical visual */
-        .formula-box {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px 0;
-            background: #fafafa;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px dashed #cbd5e1;
         }
 
         textarea, input[type="text"] {
@@ -123,6 +145,66 @@
             box-sizing: border-box;
             font-family: inherit;
             margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        /* Área interactiva de selección */
+        .word-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .word-btn {
+            padding: 10px 16px;
+            border: 2px solid #cbd5e1;
+            background: white;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .word-btn:hover {
+            border-color: var(--primary);
+            background: #f8fafc;
+        }
+
+        .interactive-option {
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .interactive-option:hover {
+            border-color: var(--primary);
+            background: #f8fafc;
+        }
+
+        .feedback-message {
+            margin-top: 10px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .feedback-success {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            border: 1px solid #a7f3d0;
+        }
+
+        .feedback-error {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+            border: 1px solid #fecaca;
         }
 
         .pause-card {
@@ -134,12 +216,12 @@
         .meta-box {
             background: #fdf2f8;
             border-left: 4px solid #f472b6;
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 0 8px 8px 0;
+            padding: 16px;
+            margin-bottom: 14px;
+            border-radius: 0 10px 10px 0;
         }
 
-        .meta-title { font-weight: bold; color: #db2777; margin-bottom: 5px; }
+        .meta-title { font-weight: bold; color: #db2777; margin-bottom: 4px; }
     </style>
 </head>
 <body>
@@ -148,158 +230,226 @@
 
     <!-- ENCABEZADO -->
     <header>
-        <h1>Lección 1: Fundamentos de Redacción</h1>
-        <div class="subtitle">Estructura de Oraciones y Conectores de Tiempo (90 Minutos)</div>
+        <h1>Construcción de Oraciones y Secuencia</h1>
+        <div class="subtitle">Guía interactiva paso a paso para organizar tus ideas en inglés</div>
     </header>
 
-    <!-- LEYENDA CÓDIGO DE COLORES -->
+    <!-- BLOQUE 1: ESTRUCTURA Y CÓDIGO DE COLORES -->
     <div class="card">
-        <h3>🎨 Guía Visual de Código de Colores</h3>
-        <p>Para identificar rápidamente cada elemento gramatical durante la lección:</p>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div class="section-title">
+            <span>1. ¿Cómo se construye una oración en inglés?</span>
+        </div>
+        <p>Para expresar tus ideas de forma ordenada, combinamos cuatro elementos clave. Utilizaremos estos colores para identificarlos en la clase:</p>
+        
+        <div class="color-legend">
             <span class="hl-connector">Conector de Orden</span>
-            <span class="hl-subject">Sujeto</span>
-            <span class="hl-verb">Verbo Acción</span>
+            <span class="hl-subject">Sujeto (¿Quién?)</span>
+            <span class="hl-verb">Verbo (Acción)</span>
             <span class="hl-complement">Complemento / Hora</span>
         </div>
-    </div>
 
-    <!-- SECCIÓN 1: TEORÍA -->
-    <div class="card">
-        <div class="section-header">
-            <h2>1. Teoría Leve: Presente Simple y Conectores</h2>
-            <span class="tag">15 min</span>
-        </div>
-        <p>Estructura básica para construir oraciones breves y claras:</p>
-        
-        <div class="formula-box">
-            <span class="hl-connector">[Conector]</span> + 
-            <span class="hl-subject">[Sujeto]</span> + 
-            <span class="hl-verb">[Verbo]</span> + 
-            <span class="hl-complement">[Complemento]</span>
+        <h4>Ejemplos Destacados:</h4>
+
+        <div class="example-box">
+            <div class="example-tag">Ejemplo 1 (Rutina de Mañana)</div>
+            <span class="hl-connector">First</span>, <span class="hl-subject">I</span> <span class="hl-verb">drink</span> <span class="hl-complement">a cup of coffee at 8:00 AM</span>.
         </div>
 
-        <h4>Conectores de Orden (Sequence Connectors):</h4>
-        <ul>
-            <li><span class="hl-connector">First</span> (Primero) - Inicio de la rutina.</li>
-            <li><span class="hl-connector">Next / Then</span> (Luego / Después) - Acciones intermedias.</li>
-            <li><span class="hl-connector">After that</span> (Después de eso) - Transición.</li>
-            <li><span class="hl-connector">Finally</span> (Finalmente) - Última acción.</li>
-        </ul>
+        <div class="example-box">
+            <div class="example-tag">Ejemplo 2 (Transición de Actividad)</div>
+            <span class="hl-connector">After that</span>, <span class="hl-subject">she</span> <span class="hl-verb">studies</span> <span class="hl-complement">English on her laptop</span>.
+        </div>
 
         <label class="checkbox-container">
             <input type="checkbox">
-            <span>¡Entendido! Domino la estructura teórica y los 5 conectores.</span>
+            <span>Reconocimiento de la estructura y el código de colores completado.</span>
         </label>
     </div>
 
-    <!-- SECCIÓN 2: PRÁCTICA GUIADA -->
+    <!-- BLOQUE 2: EJERCICIO INTERACTIVO DE IDENTIFICACIÓN -->
     <div class="card">
-        <div class="section-header">
-            <h2>2. Práctica Guiada: Mi Día en Oraciones</h2>
-            <span class="tag">30 min</span>
+        <div class="section-title">
+            <span>2. Identificación Visual de Elementos</span>
         </div>
-        
-        <p><strong>Paso A (I Do / We Do):</strong> Responde ¿Qué hiciste hoy? Escribe 4 oraciones sueltas en inglés:</p>
-        
-        <div style="margin-bottom: 15px;">
-            <label>1. Primera acción del día:</label>
-            <input type="text" placeholder="Ej: I wake up at 7:00 AM">
-        </div>
-        <div style="margin-bottom: 15px;">
-            <label>2. Segunda acción:</label>
-            <input type="text" placeholder="Ej: I take a shower">
-        </div>
-        <div style="margin-bottom: 15px;">
-            <label>3. Tercera acción:</label>
-            <input type="text" placeholder="Ej: I have breakfast">
-        </div>
-        <div style="margin-bottom: 15px;">
-            <label>4. Última acción:</label>
-            <input type="text" placeholder="Ej: I study English">
-        </div>
+        <p>A continuación, practica identificando cada parte de la oración. Haz clic en la parte que se te pide:</p>
 
-        <p><strong>Paso B (Unión con Conectores):</strong> Une tus oraciones anteriores usando conectores para formar un único párrafo fluido:</p>
-        <div class="card" style="background: #fafafa;">
-            <p><em>Ejemplo de referencia:</em> <span class="hl-connector">First</span>, <span class="hl-subject">I</span> <span class="hl-verb">wake up</span> <span class="hl-complement">at 7:00 AM</span>. <span class="hl-connector">Next</span>, <span class="hl-subject">I</span> <span class="hl-verb">take</span> <span class="hl-complement">a shower</span>. <span class="hl-connector">After that</span>, <span class="hl-subject">I</span> <span class="hl-verb">have</span> <span class="hl-complement">breakfast</span>. <span class="hl-connector">Finally</span>, <span class="hl-subject">I</span> <span class="hl-verb">study</span> <span class="hl-complement">English</span>.</p>
+        <div style="background: #fafafa; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1; margin-bottom: 15px;">
+            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración de prueba: <strong>"Then, I eat a healthy breakfast."</strong></p>
+            
+            <p><strong>Paso 1:</strong> Haz clic en el <strong>Conector de Orden</strong>:</p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPart('p1', 'Then', true)">Then</button>
+                <button class="word-btn" onclick="checkPart('p1', 'I', false)">I</button>
+                <button class="word-btn" onclick="checkPart('p1', 'eat', false)">eat</button>
+                <button class="word-btn" onclick="checkPart('p1', 'a healthy breakfast', false)">a healthy breakfast</button>
+            </div>
+            <div id="p1-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>Paso 2:</strong> Haz clic en el <strong>Sujeto</strong>:</p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPart('p2', 'Then', false)">Then</button>
+                <button class="word-btn" onclick="checkPart('p2', 'I', true)">I</button>
+                <button class="word-btn" onclick="checkPart('p2', 'eat', false)">eat</button>
+                <button class="word-btn" onclick="checkPart('p2', 'a healthy breakfast', false)">a healthy breakfast</button>
+            </div>
+            <div id="p2-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>Paso 3:</strong> Haz clic en el <strong>Verbo</strong>:</p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPart('p3', 'Then', false)">Then</button>
+                <button class="word-btn" onclick="checkPart('p3', 'I', false)">I</button>
+                <button class="word-btn" onclick="checkPart('p3', 'eat', true)">eat</button>
+                <button class="word-btn" onclick="checkPart('p3', 'a healthy breakfast', false)">a healthy breakfast</button>
+            </div>
+            <div id="p3-feedback" class="feedback-message"></div>
         </div>
-        
-        <textarea rows="4" placeholder="Escribe aquí tu párrafo completo uniendo las oraciones..."></textarea>
 
         <label class="checkbox-container">
             <input type="checkbox">
-            <span>Párrafo redactado y verificado con código de colores.</span>
+            <span>Partes de la oración identificadas correctamente.</span>
         </label>
     </div>
 
-    <!-- SECCIÓN 3: PAUSA Y DESCANSO -->
+    <!-- BLOQUE 3: PRÁCTICA DE REDACCIÓN PERSONAL -->
+    <div class="card">
+        <div class="section-title">
+            <span>3. Describe tu Día (Paso a Paso)</span>
+        </div>
+        
+        <p>Responde con oraciones sencillas en inglés sobre lo que hiciste hoy:</p>
+        
+        <div style="margin-bottom: 12px;">
+            <label>1. ¿Qué fue lo primero que hiciste?</label>
+            <input type="text" placeholder="Ejemplo: I wake up at 7:00 AM">
+        </div>
+        <div style="margin-bottom: 12px;">
+            <label>2. ¿Qué hiciste después?</label>
+            <input type="text" placeholder="Ejemplo: I take a shower">
+        </div>
+        <div style="margin-bottom: 12px;">
+            <label>3. ¿Cuál fue tu siguiente actividad?</label>
+            <input type="text" placeholder="Ejemplo: I have breakfast">
+        </div>
+        <div style="margin-bottom: 12px;">
+            <label>4. ¿Qué hiciste al final?</label>
+            <input type="text" placeholder="Ejemplo: I study English">
+        </div>
+
+        <p style="margin-top: 20px;"><strong>Une tus oraciones utilizando conectores (First, Next, After that, Finally):</strong></p>
+        <textarea rows="4" placeholder="Escribe tu párrafo uniendo todas las oraciones aquí..."></textarea>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Párrafo redactado y verificado.</span>
+        </label>
+    </div>
+
+    <!-- BLOQUE 4: PAUSA -->
     <div class="card pause-card">
-        <h3>☕ Pausa de Recarga Active</h3>
-        <p><strong>Tiempo: 10 minutos</strong> - Momento de descansar la vista, estirarse o tomar agua antes del taller práctico.</p>
+        <h3>☕ Espacio de Recarga</h3>
+        <p>Momento para tomar agua, estirarse o descansar la vista antes de la última actividad.</p>
         <label class="checkbox-container" style="justify-content: center; background: white;">
             <input type="checkbox">
-            <span>Descanso completado. ¡Listos para continuar!</span>
+            <span>Descanso completado. ¡Continuamos!</span>
         </label>
     </div>
 
-    <!-- SECCIÓN 4: TALLER ELA -->
+    <!-- BLOQUE 5: LECTURA Y SELECCIÓN CON FEEDBACK -->
     <div class="card">
-        <div class="section-header">
-            <h2>4. Taller ELA: Lectura y Secuencia de Eventos</h2>
-            <span class="tag">25 min</span>
+        <div class="section-title">
+            <span>5. Desafío de Lectura y Comprensión</span>
         </div>
-        <p>Lee el siguiente texto corto y selecciona el orden correcto de los eventos:</p>
+        <p>Lee la siguiente historia corta:</p>
         
-        <blockquote style="background: #f8fafc; padding: 15px; border-left: 4px solid var(--primary); margin: 15px 0;">
+        <blockquote style="background: #f8fafc; padding: 16px; border-left: 4px solid var(--primary); margin: 15px 0; font-size: 1.05rem;">
             "Sarah is preparing for her exam. <strong>First</strong>, she organizes her notes on the desk. <strong>Next</strong>, she reads chapters 1 and 2. <strong>After that</strong>, she writes a summary paragraph. <strong>Finally</strong>, she sleeps early to rest."
         </blockquote>
 
         <p><strong>Pregunta:</strong> ¿Qué hace Sarah inmediatamente <em>después</em> de leer los capítulos 1 y 2?</p>
-        <div>
-            <label><input type="radio" name="q1"> A) Organiza sus notas en el escritorio.</label><br>
-            <label><input type="radio" name="q1"> B) Escribe un párrafo de resumen.</label><br>
-            <label><input type="radio" name="q1"> C) Duerme temprano para descansar.</label>
+        
+        <div id="quiz-options">
+            <div class="interactive-option" onclick="checkQuiz(this, false)">
+                A) Organiza sus notas en el escritorio.
+            </div>
+            <div class="interactive-option" onclick="checkQuiz(this, true)">
+                B) Escribe un párrafo de resumen.
+            </div>
+            <div class="interactive-option" onclick="checkQuiz(this, false)">
+                C) Duerme temprano para descansar.
+            </div>
         </div>
+
+        <div id="quiz-feedback" class="feedback-message"></div>
 
         <label class="checkbox-container">
             <input type="checkbox">
-            <span>Ejercicio resuelto e identificado correctamente.</span>
+            <span>Desafío de lectura resuelto correctamente.</span>
         </label>
     </div>
 
-    <!-- SECCIÓN 5: CIERRE Y METAS SMART (REVISIÓN FINAL) -->
+    <!-- BLOQUE 6: REVISIÓN DE METAS SMART -->
     <div class="card">
-        <div class="section-header">
-            <h2>5. Cierre y Metas SMART de Progreso</h2>
-            <span class="tag">10 min</span>
+        <div class="section-title">
+            <span>6. Metas y Compromiso de Progreso</span>
         </div>
-        <p>Para finalizar la lección, repasamos los 3 niveles de metas configurados para garantizar tu éxito hacia BYU–Pathway:</p>
+        <p>Revisión de las metas acordadas para asegurar un avance constante:</p>
 
-        <!-- Meta Diaria de esta Clase -->
         <div class="meta-box">
-            <div class="meta-title">🎯 Meta SMART de esta Clase (Lograda Hoy):</div>
-            <p>"Completar un diagrama visual con código de colores e identificar correctamente 5 conectores de secuencia (first, next, then, after that, finally) en un texto corto de lectura."[cite: 5, 6]</p>
+            <div class="meta-title">🎯 Meta de la Clase de Hoy:</div>
+            <p>"Completar un diagrama visual con código de colores e identificar correctamente 5 conectores de secuencia en un texto corto de lectura."</p>
         </div>
 
-        <!-- Meta Semanal / Trabajo Autónomo -->
         <div class="meta-box" style="border-left-color: #818cf8;">
-            <div class="meta-title" style="color: #4f46e5;">📌 Meta SMART Semanal (Fuera de clase)[cite: 5, 6]:</div>
-            <p>"Escribir 1 párrafo diario de 4 a 5 oraciones en inglés sobre mis actividades cotidianas usando conectores de secuencia (first, then, after that, finally) de lunes a sábado (6 párrafos en total) en mi libreta para dominar la primera pregunta del examen ELA."[cite: 5, 6]</p>
+            <div class="meta-title" style="color: #4f46e5;">📌 Meta Semanal (Trabajo Personal):</div>
+            <p>"Escribir 1 párrafo diario de 4 a 5 oraciones en inglés sobre mis actividades cotidianas usando conectores de secuencia (first, then, after that, finally) de lunes a sábado (6 párrafos en total) en mi libreta."</p>
         </div>
 
-        <!-- Meta del Mes / General -->
         <div class="meta-box" style="border-left-color: #34d399;">
-            <div class="meta-title" style="color: #059669;">🏆 Meta SMART General del Mes ( BYU–Pathway )[cite: 5, 6]:</div>
-            <p>"Completar 8 sesiones de estudio asistido y 24 actividades autónomas en 4 semanas para responder con confianza el test de práctica de lectura (Reading)[cite: 6] y redactar los 2 textos del examen ELA[cite: 5, 6] obteniendo una autoevaluación superior al 80% para postular a BYU–Pathway."[cite: 6]</p>
+            <div class="meta-title" style="color: #059669;">🏆 Meta General del Mes:</div>
+            <p>"Completar 8 sesiones de estudio y las actividades semanales para responder con confianza el examen de práctica y postular a BYU–Pathway."</p>
         </div>
 
         <label class="checkbox-container">
             <input type="checkbox">
-            <span>Clase 1 completada y metas acordadas para la semana.</span>
+            <span>Metas revisadas y confirmadas para la semana.</span>
         </label>
     </div>
 
 </div>
+
+<script>
+    // Función para verificar partes de la oración
+    function checkPart(stepId, word, isCorrect) {
+        const feedbackEl = document.getElementById(stepId + '-feedback');
+        feedbackEl.style.display = 'block';
+
+        if (isCorrect) {
+            feedbackEl.className = 'feedback-message feedback-success';
+            feedbackEl.innerHTML = '✔ ¡Correcto! "' + word + '" es la opción adecuada.';
+        } else {
+            feedbackEl.className = 'feedback-message feedback-error';
+            feedbackEl.innerHTML = '✖ Inténtalo de nuevo. "' + word + '" no corresponde a esta categoría.';
+        }
+    }
+
+    // Función para el cuestionario de opción múltiple
+    function checkQuiz(element, isCorrect) {
+        const feedbackEl = document.getElementById('quiz-feedback');
+        feedbackEl.style.display = 'block';
+
+        if (isCorrect) {
+            element.style.borderColor = '#10b981';
+            element.style.backgroundColor = '#d1fae5';
+            feedbackEl.className = 'feedback-message feedback-success';
+            feedbackEl.innerHTML = '✔ ¡Excelente! Respuesta correcta. Sarah escribe un párrafo de resumen (After that, she writes a summary paragraph).';
+        } else {
+            element.style.borderColor = '#ef4444';
+            element.style.backgroundColor = '#fee2e2';
+            feedbackEl.className = 'feedback-message feedback-error';
+            feedbackEl.innerHTML = '✖ Respuesta incorrecta. Vuelve a leer el texto con atención e inténtalo de nuevo.';
+        }
+    }
+</script>
 
 </body>
 </html>
