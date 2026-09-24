@@ -11,13 +11,13 @@
     --primary-light: #e0e7ff;
     
     /* Código de Colores Gramaticales (Pastel) */
-    --subject-color: #dcfce7; /* Verde claro */
+    --subject-color: #dcfce7;
     --subject-text: #166534;
-    --verb-color: #dbeafe; /* Azul claro */
+    --verb-color: #dbeafe;
     --verb-text: #1e40af;
-    --connector-color: #fef3c7; /* Amarillo/Naranja claro */
+    --connector-color: #fef3c7;
     --connector-text: #92400e;
-    --complement-color: #f3e8ff; /* Púrpura claro */
+    --complement-color: #f3e8ff;
     --complement-text: #6b21a8;
 
     /* Estado de feedback */
@@ -30,7 +30,6 @@
     --border-radius: 14px;
 }
 
-/* Configuración global del cuerpo */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
@@ -40,13 +39,11 @@ body {
     padding: 20px;
 }
 
-/* Contenedor principal centrado */
 .container {
     max-width: 880px;
     margin: 0 auto;
 }
 
-/* Encabezado principal */
 header {
     background: linear-gradient(135deg, #818cf8, #c084fc);
     color: white;
@@ -68,7 +65,6 @@ h1 {
     margin-top: 6px; 
 }
 
-/* Tarjetas y Secciones */
 .card {
     background: var(--card-bg);
     border-radius: var(--border-radius);
@@ -137,7 +133,6 @@ h1 {
     border: 1px solid #e2e8f0;
 }
 
-/* Cajas de ejemplos destacados */
 .example-box {
     background: #ffffff;
     border: 2px solid #e0e7ff;
@@ -161,7 +156,6 @@ h1 {
    COMPONENTES INTERACTIVOS
    ========================================== */
 
-/* Checkbox para validar progreso */
 .checkbox-container {
     display: flex;
     align-items: center;
@@ -187,7 +181,6 @@ h1 {
     cursor: pointer;
 }
 
-/* Formularios y entradas de texto */
 textarea, input[type="text"] {
     width: 100%;
     padding: 12px;
@@ -199,7 +192,6 @@ textarea, input[type="text"] {
     font-size: 1rem;
 }
 
-/* Botones de selección de palabras */
 .word-selector {
     display: flex;
     gap: 10px;
@@ -223,7 +215,6 @@ textarea, input[type="text"] {
     background: #f8fafc;
 }
 
-/* Opciones interactivas de encuestas y lectura */
 .interactive-option {
     padding: 12px 16px;
     border: 1px solid #cbd5e1;
@@ -239,7 +230,6 @@ textarea, input[type="text"] {
     background: #f8fafc;
 }
 
-/* Mensajes de retroalimentación (Feedback) */
 .feedback-message {
     margin-top: 10px;
     padding: 10px 14px;
@@ -264,14 +254,12 @@ textarea, input[type="text"] {
    SECCIONES ESPECIALES (PAUSA Y METAS)
    ========================================== */
 
-/* Tarjeta para pausas de recarga mental */
 .pause-card {
     background: #f0fdf4;
     border-color: #bbf7d0;
     text-align: center;
 }
 
-/* Contenedores de Metas SMART */
 .meta-box {
     background: #fdf2f8;
     border-left: 4px solid #f472b6;
@@ -284,4 +272,31 @@ textarea, input[type="text"] {
     font-weight: bold; 
     color: #db2777; 
     margin-bottom: 4px; 
+}
+
+/* ==========================================
+   BOTÓN DE CLASE VIRTUAL
+   ========================================== */
+
+.meet-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.meet-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(21, 128, 61, 0.35);
 }
