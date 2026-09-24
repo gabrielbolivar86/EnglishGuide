@@ -3,125 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección 1: Conectores y Estructura de Oraciones</title>
-    <!-- Ruta relativa desde /KeygelSalazar/lessons/ hasta /assets/ -->
+    <title>Lección 1: Fundamentos de Redacción y Conectores de Tiempo</title>
     <link rel="stylesheet" href="../../assets/course.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- ENCABEZADO CON BOTÓN ATRÁS -->
-    <header style="position: relative;">
-        <!-- Vuelve a la página principal de Keygel -->
-        <a href="../index.html" id="btn-back" style="
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            background: rgba(255, 255, 255, 0.25);
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            backdrop-filter: blur(4px);
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        " onmouseover="this.style.background='rgba(255, 255, 255, 0.4)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.25)'">
-            ← Volver
-        </a>
-
-        <h1 style="margin-top: 10px;">Construcción de Oraciones y Secuencia</h1>
-        <div class="subtitle">Guía interactiva paso a paso para organizar tus ideas en inglés</div>
-    </header>
-
-    <!-- META SMART DE LA CLASE (INICIO) -->
-    <div class="card" style="border-left: 5px solid var(--primary); background: #f0f4fe;">
-        <div style="font-weight: bold; color: var(--primary); font-size: 1.1rem; margin-bottom: 5px;">
-            🎯 Meta de la Clase de Hoy:
-        </div>
-        <p style="margin: 0; font-size: 1.05rem; color: #1e293b;">
-            "Identificar y aplicar correctamente al menos 4 conectores de secuencia (first, then, after that, finally) en oraciones sobre hábitos diarios, resolviendo los ejercicios intermedios y de lectura de comprensión."
-        </p>
+    <!-- BARRA SUPERIOR: botón Volver, ya NO se sobrepone al título -->
+    <div class="lesson-topbar">
+        <a href="../index.html" class="btn-back">← Volver</a>
     </div>
 
-    <!-- BLOQUE 1: VOCABULARIO CLAVE Y PRÁCTICA AUTÓNOMA -->
-    <div class="card">
-        <div class="section-title">
-            <span>Vocabulario Clave y Conectores</span>
-        </div>
-        <p>Revisa el vocabulario que utilizaremos hoy. Tómate 2 minutos para memorizar la asociación visual:</p>
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Lección 1: Fundamentos de Redacción</h1>
+        <div class="subtitle">Estructura de Oraciones y Conectores de Tiempo (90 Minutos)</div>
+    </header>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 15px 0;">
+    <!-- VOCABULARIO INTRODUCTORIO -->
+    <div class="card">
+        <div class="section-header">
+            <h2>📖 Vocabulario de la Clase</h2>
+        </div>
+        <p>Antes de la teoría, repasamos el vocabulario de rutina diaria usado en los ejemplos de hoy:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 15px 0;">
             <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center;">
                 <strong style="color: var(--primary);">Wake up</strong>
                 <div style="font-size: 0.9rem; color: #64748b;">Despertarse</div>
-            </div>
-            <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center;">
-                <strong style="color: var(--primary);">Brush teeth</strong>
-                <div style="font-size: 0.9rem; color: #64748b;">Lavarse los dientes</div>
             </div>
             <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center;">
                 <strong style="color: var(--primary);">Take a shower</strong>
                 <div style="font-size: 0.9rem; color: #64748b;">Ducharse / Bañarse</div>
             </div>
             <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center;">
-                <strong style="color: var(--primary);">Eat breakfast</strong>
+                <strong style="color: var(--primary);">Have breakfast</strong>
                 <div style="font-size: 0.9rem; color: #64748b;">Desayunar</div>
             </div>
-        </div>
-
-        <div style="background: #fdf2f8; border-radius: 10px; padding: 15px; margin-top: 15px; border: 1px solid #fbcfe8;">
-            <strong>💡 Práctica de Memoria Autónoma:</strong>
-            <p style="margin: 5px 0 0 0; font-size: 0.95rem;">Cierra los ojos durante 30 segundos y repite mentalmente las 4 acciones combinadas con un conector de orden (Ejemplo: <em>First, wake up... Then, eat breakfast</em>).</p>
+            <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: center;">
+                <strong style="color: var(--primary);">Study</strong>
+                <div style="font-size: 0.9rem; color: #64748b;">Estudiar</div>
+            </div>
         </div>
     </div>
 
-    <!-- BLOQUE 2: ESTRUCTURA Y CÓDIGO DE COLORES -->
+    <!-- LEYENDA CÓDIGO DE COLORES -->
     <div class="card">
-        <div class="section-title">
-            <span>1. ¿Cómo se construye una oración en inglés?</span>
-        </div>
-        <p>Para expresar tus ideas de forma ordenada en Presente Simple, combinamos cuatro elementos clave. Utilizaremos estos colores para identificarlos:</p>
-
+        <h3>🎨 Guía Visual de Código de Colores</h3>
+        <p>Para identificar rápidamente cada elemento gramatical durante la lección:</p>
         <div class="color-legend">
             <span class="hl-connector">Conector de Orden</span>
-            <span class="hl-subject">Sujeto (¿Quién?)</span>
-            <span class="hl-verb">Verbo (Acción)</span>
+            <span class="hl-subject">Sujeto</span>
+            <span class="hl-verb">Verbo Acción</span>
             <span class="hl-complement">Complemento / Hora</span>
         </div>
+    </div>
 
-        <h4>Ejemplos Destacados:</h4>
+    <!-- SECCIÓN 1: TEORÍA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>1. Teoría Leve: Presente Simple y Conectores</h2>
+            <span class="tag">15 min</span>
+        </div>
+        <p>Estructura básica para construir oraciones breves y claras:</p>
 
-        <div class="example-box">
-            <div class="example-tag">Ejemplo 1 (Rutina de Mañana)</div>
-            <span class="hl-connector">First</span>, <span class="hl-subject">I</span> <span class="hl-verb">drink</span> <span class="hl-complement">a cup of coffee at 8:00 AM</span>.
+        <div class="formula-box">
+            <span class="hl-connector">[Conector]</span> +
+            <span class="hl-subject">[Sujeto]</span> +
+            <span class="hl-verb">[Verbo]</span> +
+            <span class="hl-complement">[Complemento]</span>
         </div>
 
-        <div class="example-box">
-            <div class="example-tag">Ejemplo 2 (Transición de Actividad)</div>
-            <span class="hl-connector">After that</span>, <span class="hl-subject">she</span> <span class="hl-verb">studies</span> <span class="hl-complement">English on her laptop</span>.
+        <h4>Conectores de Orden (Sequence Connectors):</h4>
+        <ul>
+            <li><span class="hl-connector">First</span> (Primero) - Inicio de la rutina.</li>
+            <li><span class="hl-connector">Next / Then</span> (Luego / Después) - Acciones intermedias.</li>
+            <li><span class="hl-connector">After that</span> (Después de eso) - Transición.</li>
+            <li><span class="hl-connector">Finally</span> (Finalmente) - Última acción.</li>
+        </ul>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>¡Entendido! Domino la estructura teórica y los 5 conectores.</span>
+        </label>
+    </div>
+
+    <!-- SECCIÓN 2: PRÁCTICA GUIADA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>2. Práctica Guiada: Mi Día en Oraciones</h2>
+            <span class="tag">30 min</span>
+        </div>
+
+        <p><strong>Paso A (I Do / We Do):</strong> Responde ¿Qué hiciste hoy? Escribe 4 oraciones sueltas en inglés:</p>
+
+        <div style="margin-bottom: 15px;">
+            <label>1. Primera acción del día:</label>
+            <input type="text" placeholder="Ej: I wake up at 7:00 AM">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>2. Segunda acción:</label>
+            <input type="text" placeholder="Ej: I take a shower">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>3. Tercera acción:</label>
+            <input type="text" placeholder="Ej: I have breakfast">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label>4. Última acción:</label>
+            <input type="text" placeholder="Ej: I study English">
+        </div>
+
+        <p><strong>Paso B (Unión con Conectores):</strong> Une tus oraciones anteriores usando conectores para formar un único párrafo fluido:</p>
+        <div class="card" style="background: #fafafa;">
+            <p><em>Ejemplo de referencia:</em> <span class="hl-connector">First</span>, <span class="hl-subject">I</span> <span class="hl-verb">wake up</span> <span class="hl-complement">at 7:00 AM</span>. <span class="hl-connector">Next</span>, <span class="hl-subject">I</span> <span class="hl-verb">take</span> <span class="hl-complement">a shower</span>. <span class="hl-connector">After that</span>, <span class="hl-subject">I</span> <span class="hl-verb">have</span> <span class="hl-complement">breakfast</span>. <span class="hl-connector">Finally</span>, <span class="hl-subject">I</span> <span class="hl-verb">study</span> <span class="hl-complement">English</span>.</p>
+        </div>
+
+        <textarea rows="4" placeholder="Escribe aquí tu párrafo completo uniendo las oraciones..."></textarea>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Párrafo redactado y verificado con código de colores.</span>
+        </label>
+    </div>
+
+    <!-- SECCIÓN 3: PAUSA Y DESCANSO -->
+    <div class="card pause-card">
+        <h3>☕ Pausa de Recarga Activa</h3>
+        <p><strong>Tiempo: 10 minutos</strong> - Momento de descansar la vista, estirarse o tomar agua antes del taller práctico.</p>
+        <label class="checkbox-container" style="justify-content: center; background: white;">
+            <input type="checkbox">
+            <span>Descanso completado. ¡Listos para continuar!</span>
+        </label>
+    </div>
+
+    <!-- SECCIÓN 4: TALLER ELA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>4. Taller ELA: Lectura y Secuencia de Eventos</h2>
+            <span class="tag">25 min</span>
+        </div>
+        <p>Lee el siguiente texto corto y selecciona el orden correcto de los eventos:</p>
+
+        <blockquote style="background: #f8fafc; padding: 15px; border-left: 4px solid var(--primary); margin: 15px 0;">
+            "Sarah is preparing for her exam. <strong>First</strong>, she organizes her notes on the desk. <strong>Next</strong>, she reads chapters 1 and 2. <strong>After that</strong>, she writes a summary paragraph. <strong>Finally</strong>, she sleeps early to rest."
+        </blockquote>
+
+        <p><strong>Pregunta:</strong> ¿Qué hace Sarah inmediatamente <em>después</em> de leer los capítulos 1 y 2?</p>
+        <div>
+            <label><input type="radio" name="q1"> A) Organiza sus notas en el escritorio.</label><br>
+            <label><input type="radio" name="q1"> B) Escribe un párrafo de resumen.</label><br>
+            <label><input type="radio" name="q1"> C) Duerme temprano para descansar.</label>
         </div>
 
         <label class="checkbox-container">
             <input type="checkbox">
-            <span>Reconocimiento de la estructura y el código de colores completado.</span>
+            <span>Ejercicio resuelto e identificado correctamente.</span>
         </label>
     </div>
 
-    <!-- BLOQUE 3: EJERCICIOS INTERACTIVOS DE IDENTIFICACIÓN -->
+    <!-- SECCIÓN 5: CIERRE Y METAS SMART (REVISIÓN FINAL) -->
     <div class="card">
-        <div class="section-title">
-            <span>2. Identificación Visual de Elementos (Práctica Guiada)</span>
+        <div class="section-header">
+            <h2>5. Cierre y Metas SMART de Progreso</h2>
+            <span class="tag">10 min</span>
         </div>
-        <p>A continuación, practica identificando cada parte de las oraciones en Presente Simple:</p>
+        <p>Para finalizar la lección, repasamos los 3 niveles de metas configurados para garantizar tu éxito hacia BYU–Pathway:</p>
 
-        <!-- Oración 1 -->
+        <div class="meta-box">
+            <div class="meta-title">🎯 Meta SMART de esta Clase (Lograda Hoy):</div>
+            <p>"Completar un diagrama visual con código de colores e identificar correctamente 5 conectores de secuencia (first, next, then, after that, finally) en un texto corto de lectura."[cite: 5, 6]</p>
+        </div>
+
+        <div class="meta-box" style="border-left-color: #818cf8;">
+            <div class="meta-title" style="color: #4f46e5;">📌 Meta SMART Semanal (Fuera de clase)[cite: 5, 6]:</div>
+            <p>"Escribir 1 párrafo diario de 4 a 5 oraciones en inglés sobre mis actividades cotidianas usando conectores de secuencia (first, then, after that, finally) de lunes a sábado (6 párrafos en total) en mi libreta para dominar la primera pregunta del examen ELA."[cite: 5, 6]</p>
+        </div>
+
+        <div class="meta-box" style="border-left-color: #34d399;">
+            <div class="meta-title" style="color: #059669;">🏆 Meta SMART General del Mes ( BYU–Pathway )[cite: 5, 6]:</div>
+            <p>"Completar 8 sesiones de estudio asistido y 24 actividades autónomas en 4 semanas para responder con confianza el test de práctica de lectura (Reading)[cite: 6] y redactar los 2 textos del examen ELA[cite: 5, 6] obteniendo una autoevaluación superior al 80% para postular a BYU–Pathway."[cite: 6]</p>
+        </div>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Clase 1 completada y metas acordadas para la semana.</span>
+        </label>
+    </div>
+
+    <!-- ================================================================
+         EJERCICIOS EXTRA: práctica individual fuera de clase
+         (No se vieron en la sesión en vivo; son material adicional)
+         ================================================================ -->
+
+    <div class="card" style="border-left: 5px solid #f59e0b; background: #fffbeb;">
+        <div style="font-weight: bold; color: #b45309; font-size: 1.2rem; margin-bottom: 4px;">
+            ⭐ Ejercicios de Práctica Individual (Extra)
+        </div>
+        <p style="margin: 0; color: #92400e; font-size: 0.95rem;">
+            Estos ejercicios no se hicieron durante la clase en vivo. Son material adicional para que Keygel practique por su cuenta cuando quiera reforzar lo aprendido.
+        </p>
+    </div>
+
+    <!-- EXTRA 1: Identificación visual de elementos -->
+    <div class="card">
+        <div class="section-header">
+            <h2>Extra 1. Identificación Visual de Elementos</h2>
+            <span class="tag" style="background: #fef3c7; color: #92400e;">Práctica individual</span>
+        </div>
+        <p>Practica identificando cada parte de las oraciones en Presente Simple:</p>
+
         <div style="background: #fafafa; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1; margin-bottom: 20px;">
-            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración 1: <strong>"Then, I eat a healthy breakfast."</strong></p>
+            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración: <strong>"Then, I eat a healthy breakfast."</strong></p>
 
             <p><strong>Paso 1:</strong> Haz clic en el <strong>Conector de Orden</strong>:</p>
             <div class="word-selector">
@@ -151,9 +244,8 @@
             <div id="p3-feedback" class="feedback-message"></div>
         </div>
 
-        <!-- Oración 2 -->
-        <div style="background: #fafafa; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1; margin-bottom: 15px;">
-            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración 2: <strong>"First, she drinks a glass of water."</strong></p>
+        <div style="background: #fafafa; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1;">
+            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración: <strong>"First, she drinks a glass of water."</strong></p>
 
             <p><strong>Paso 1:</strong> Haz clic en el <strong>Conector de Orden</strong>:</p>
             <div class="word-selector">
@@ -164,65 +256,16 @@
             </div>
             <div id="p4-feedback" class="feedback-message"></div>
         </div>
-
-        <label class="checkbox-container">
-            <input type="checkbox">
-            <span>Partes de la oración identificadas correctamente.</span>
-        </label>
     </div>
 
-    <!-- BLOQUE 4: PRÁCTICA DE REDACCIÓN PERSONAL -->
+    <!-- EXTRA 2: Análisis sintáctico -->
     <div class="card">
-        <div class="section-title">
-            <span>3. Describe tu Día en Presente Simple</span>
-        </div>
-
-        <p>Responde con oraciones sencillas sobre tus hábitos o lo que haces diariamente:</p>
-
-        <div style="margin-bottom: 12px;">
-            <label>1. ¿Qué es lo primero que haces en la mañana?</label>
-            <input type="text" placeholder="Ejemplo: I wake up at 7:00 AM">
-        </div>
-        <div style="margin-bottom: 12px;">
-            <label>2. ¿Qué haces después?</label>
-            <input type="text" placeholder="Ejemplo: I take a shower">
-        </div>
-        <div style="margin-bottom: 12px;">
-            <label>3. ¿Cuál es tu siguiente actividad?</label>
-            <input type="text" placeholder="Ejemplo: I eat breakfast">
-        </div>
-        <div style="margin-bottom: 12px;">
-            <label>4. ¿Qué haces al final?</label>
-            <input type="text" placeholder="Ejemplo: I study English">
-        </div>
-
-        <p style="margin-top: 20px;"><strong>Une tus oraciones utilizando conectores (First, Next, After that, Finally):</strong></p>
-        <textarea rows="4" placeholder="Escribe tu párrafo uniendo todas las oraciones aquí..."></textarea>
-
-        <label class="checkbox-container">
-            <input type="checkbox">
-            <span>Párrafo redactado y verificado.</span>
-        </label>
-    </div>
-
-    <!-- BLOQUE 5: PAUSA DE RECARGA -->
-    <div class="card pause-card">
-        <h3>☕ Espacio de Recarga</h3>
-        <p>Momento para tomar agua, estirarse o descansar la vista antes de las prácticas finales.</p>
-        <label class="checkbox-container" style="justify-content: center; background: white;">
-            <input type="checkbox">
-            <span>Descanso completado. ¡Continuamos!</span>
-        </label>
-    </div>
-
-    <!-- BLOQUE 6: PRÁCTICA FINAL DE ANÁLISIS SINTÁCTICO -->
-    <div class="card">
-        <div class="section-title">
-            <span>Práctica Final: Análisis Sintáctico</span>
+        <div class="section-header">
+            <h2>Extra 2. Análisis Sintáctico</h2>
+            <span class="tag" style="background: #fef3c7; color: #92400e;">Práctica individual</span>
         </div>
         <p>Demuestra tu dominio reconociendo los componentes de las oraciones:</p>
 
-        <!-- Ejercicio 1 -->
         <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 12px; border: 1px solid #e2e8f0;">
             <p style="margin-top:0;"><strong>1. En la oración "Finally, I sleep at 10:00 PM", ¿cuál es el conector?</strong></p>
             <button class="word-btn" onclick="checkPart('syn1', 'Finally', true)">Finally</button>
@@ -231,8 +274,7 @@
             <div id="syn1-feedback" class="feedback-message"></div>
         </div>
 
-        <!-- Ejercicio 2 -->
-        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 12px; border: 1px solid #e2e8f0;">
+        <div style="background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
             <p style="margin-top:0;"><strong>2. En la oración "Next, he cleans his bedroom", ¿cuál es el verbo de acción?</strong></p>
             <button class="word-btn" onclick="checkPart('syn2', 'Next', false)">Next</button>
             <button class="word-btn" onclick="checkPart('syn2', 'he', false)">he</button>
@@ -241,10 +283,11 @@
         </div>
     </div>
 
-    <!-- BLOQUE 7: PRÁCTICA FINAL DE LECTURA ELA -->
+    <!-- EXTRA 3: Lectura y comprensión -->
     <div class="card">
-        <div class="section-title">
-            <span>Práctica Final: Lectura y Comprensión</span>
+        <div class="section-header">
+            <h2>Extra 3. Lectura y Comprensión</h2>
+            <span class="tag" style="background: #fef3c7; color: #92400e;">Práctica individual</span>
         </div>
         <p>Lee la siguiente historia corta formada por 2 párrafos en Presente Simple:</p>
 
@@ -255,65 +298,36 @@
 
         <p><strong>Pregunta 1:</strong> ¿Qué hace Mark inmediatamente después de despertarse?</p>
         <div id="quiz-options-1">
-            <div class="interactive-option" onclick="checkQuiz('q1', this, true)">
+            <div class="interactive-option" onclick="checkQuiz('q1extra', this, true)">
                 A) Bebe un vaso de agua.
             </div>
-            <div class="interactive-option" onclick="checkQuiz('q1', this, false)">
+            <div class="interactive-option" onclick="checkQuiz('q1extra', this, false)">
                 B) Camina hacia su trabajo.
             </div>
         </div>
-        <div id="q1-feedback" class="feedback-message"></div>
+        <div id="q1extra-feedback" class="feedback-message"></div>
 
         <p style="margin-top:20px;"><strong>Pregunta 2:</strong> ¿A qué hora camina Mark hacia su trabajo?</p>
         <div id="quiz-options-2">
-            <div class="interactive-option" onclick="checkQuiz('q2', this, false)">
+            <div class="interactive-option" onclick="checkQuiz('q2extra', this, false)">
                 A) A las 6:00 AM.
             </div>
-            <div class="interactive-option" onclick="checkQuiz('q2', this, true)">
+            <div class="interactive-option" onclick="checkQuiz('q2extra', this, true)">
                 B) A las 8:00 AM.
             </div>
         </div>
-        <div id="q2-feedback" class="feedback-message"></div>
+        <div id="q2extra-feedback" class="feedback-message"></div>
 
         <label class="checkbox-container">
             <input type="checkbox">
-            <span>Práctica de lectura y comprensión completada.</span>
-        </label>
-    </div>
-
-    <!-- BLOQUE 8: REVISIÓN Y REGISTRO DE METAS SMART (CIERRE) -->
-    <div class="card">
-        <div class="section-title">
-            <span>Metas y Compromisos de Progreso</span>
-        </div>
-        <p>Verificación final del cumplimiento de objetivos y fijación del trabajo autónomo:</p>
-
-        <div class="meta-box">
-            <div class="meta-title">🎯 Meta de la Clase de Hoy (Verificación):</div>
-            <p>"Identificar y aplicar correctamente al menos 4 conectores de secuencia (first, then, after that, finally) en oraciones sobre hábitos diarios."</p>
-        </div>
-
-        <div class="meta-box" style="border-left-color: #818cf8;">
-            <div class="meta-title" style="color: #4f46e5;">📌 Meta Semanal (Miércoles a Miércoles):</div>
-            <p>"Escribir 1 párrafo diario de 4 a 5 oraciones en Presente Simple sobre mi rutina o la de un familiar usando 3 conectores distintos (first, then, after that) de lunes a sábado en mi libreta."</p>
-        </div>
-
-        <div class="meta-box" style="border-left-color: #34d399;">
-            <div class="meta-title" style="color: #059669;">🏆 Meta General del Mes:</div>
-            <p>"Completar 8 sesiones de estudio y 24 actividades autónomas para resolver con más del 80% de aciertos el examen de práctica de lectura y redacción para BYU–Pathway."</p>
-        </div>
-
-        <label class="checkbox-container">
-            <input type="checkbox">
-            <span>Metas revisadas y confirmadas para la semana.</span>
+            <span>Práctica extra de lectura y comprensión completada.</span>
         </label>
     </div>
 
 </div>
 
-<!-- SCRIPT DE INTERACTIVIDAD -->
+<!-- SCRIPT DE INTERACTIVIDAD (usado solo por los ejercicios extra) -->
 <script>
-    // Verificación de selección de componentes
     function checkPart(stepId, word, isCorrect) {
         const feedbackEl = document.getElementById(stepId + '-feedback');
         feedbackEl.style.display = 'block';
@@ -327,7 +341,6 @@
         }
     }
 
-    // Verificación de preguntas de lectura
     function checkQuiz(quizId, element, isCorrect) {
         const feedbackEl = document.getElementById(quizId + '-feedback');
         feedbackEl.style.display = 'block';

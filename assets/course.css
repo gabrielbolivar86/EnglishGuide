@@ -275,6 +275,82 @@ textarea, input[type="text"] {
 }
 
 /* ==========================================
+   ENCABEZADO DE SECCIÓN CON ETIQUETA DE TIEMPO
+   (usado en las páginas de lección)
+   ========================================== */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #1e293b;
+}
+
+.tag {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.formula-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+}
+
+/* ==========================================
+   BARRA SUPERIOR DE LECCIÓN (botón Volver)
+   Se coloca ANTES del header, no encima,
+   para que nunca se sobreponga al título.
+   ========================================== */
+
+.lesson-topbar {
+    margin-bottom: 14px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+/* ==========================================
    BOTÓN DE CLASE VIRTUAL
    ========================================== */
 
