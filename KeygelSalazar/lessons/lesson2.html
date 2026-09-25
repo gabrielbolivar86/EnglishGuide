@@ -57,6 +57,8 @@
                 <span class="hl-subject">My boss</span>
                 <span class="hl-subject">My coworker</span>
                 <span class="hl-subject">My client</span>
+                <span class="hl-subject">Daniela</span>
+                <span class="hl-subject">Carlos</span>
             </div>
             <div class="vocab-column">
                 <h4>Verbos de Acción</h4>
@@ -98,7 +100,7 @@
             <h2>🎰 Arma tu Oración</h2>
             <span class="tag">Actividad interactiva</span>
         </div>
-        <p>Presiona <strong>Girar</strong> en cada familia de palabras. Todas las combinaciones tienen sentido, ¡así que no hay forma de equivocarse!</p>
+        <p>Presiona <strong>Girar</strong> en cada familia de palabras. El verbo y el predicado siempre están emparejados a propósito, así que toda combinación que salga tiene sentido — el idioma se conjuga solo según quién sea el sujeto.</p>
 
         <!-- Familia 1: Comida -->
         <div class="slot-family">
@@ -207,6 +209,36 @@
             </div>
             <div id="l2c-feedback" class="feedback-message"></div>
         </div>
+
+        <!-- Oración 3: sujeto con nombre propio -->
+        <div style="background: #fafafa; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1; margin-top: 20px;">
+            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración 3: <strong>"Daniela writes an email every morning."</strong></p>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: -8px;">Recuerda: el sujeto también puede ser el nombre de una persona, no solo "I", "She" o "My mother".</p>
+
+            <p><strong>¿Cuál es el Sujeto?</strong></p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l3a', 'Daniela', true, 'subject')">Daniela</button>
+                <button class="word-btn" onclick="checkPartL2('l3a', 'writes', false, 'verb')">writes</button>
+                <button class="word-btn" onclick="checkPartL2('l3a', 'an email every morning', false, 'complement')">an email every morning</button>
+            </div>
+            <div id="l3a-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>¿Cuál es el Verbo?</strong></p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l3b', 'Daniela', false, 'subject')">Daniela</button>
+                <button class="word-btn" onclick="checkPartL2('l3b', 'writes', true, 'verb')">writes</button>
+                <button class="word-btn" onclick="checkPartL2('l3b', 'an email every morning', false, 'complement')">an email every morning</button>
+            </div>
+            <div id="l3b-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>¿Cuál es el Predicado?</strong></p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l3c', 'Daniela', false, 'subject')">Daniela</button>
+                <button class="word-btn" onclick="checkPartL2('l3c', 'writes', false, 'verb')">writes</button>
+                <button class="word-btn" onclick="checkPartL2('l3c', 'an email every morning', true, 'complement')">an email every morning</button>
+            </div>
+            <div id="l3c-feedback" class="feedback-message"></div>
+        </div>
     </div>
 
     <!-- PAUSA ACTIVA -->
@@ -244,6 +276,48 @@
         </label>
     </div>
 
+    <!-- COMPRENSIÓN LECTORA CON REVELADO DE ESTRUCTURA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>📖 Ahora te toca leer a ti</h2>
+            <span class="tag">Comprensión lectora</span>
+        </div>
+        <p>Lee el siguiente texto sobre la rutina de Daniela y responde las preguntas. Al final podrás revelar dónde están los sujetos, verbos, predicados y conectores.</p>
+
+        <blockquote id="readingArticle" style="background: #f8fafc; padding: 16px; border-left: 4px solid var(--primary); margin: 15px 0; font-size: 1.05rem;">
+            Daniela wakes up early every day. First, she takes a shower and eats a quick breakfast. Then, she goes to the office and checks her emails. After that, she writes reports for her boss. Finally, she goes home and reads a book before bed.
+        </blockquote>
+
+        <p><strong>Pregunta 1:</strong> ¿Qué hace Daniela inmediatamente después de tomar la ducha?</p>
+        <div id="reading-q1-options">
+            <div class="interactive-option" onclick="checkQuiz('reading-q1', this, false)">
+                A) Revisa sus correos electrónicos.
+            </div>
+            <div class="interactive-option" onclick="checkQuiz('reading-q1', this, true)">
+                B) Come un desayuno rápido.
+            </div>
+        </div>
+        <div id="reading-q1-feedback" class="feedback-message"></div>
+
+        <p style="margin-top:20px;"><strong>Pregunta 2:</strong> ¿Para quién escribe reportes Daniela?</p>
+        <div id="reading-q2-options">
+            <div class="interactive-option" onclick="checkQuiz('reading-q2', this, true)">
+                A) Para su jefe.
+            </div>
+            <div class="interactive-option" onclick="checkQuiz('reading-q2', this, false)">
+                B) Para su hermano.
+            </div>
+        </div>
+        <div id="reading-q2-feedback" class="feedback-message"></div>
+
+        <button class="word-btn" id="revealStructureBtn" style="margin-top: 18px;" onclick="toggleStructure()">👁️ Ver Estructura</button>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Respondí las preguntas y revisé la estructura del texto.</span>
+        </label>
+    </div>
+
     <!-- GUÍA FÁCIL DE 3 PASOS -->
     <div class="card" style="background: #fefce8; border-color: #fde68a;">
         <div class="section-header">
@@ -265,7 +339,7 @@
         </div>
     </div>
 
-    <!-- CIERRE Y METAS SMART -->
+    <!-- CIERRE Y METAS -->
     <div class="card">
         <div class="section-header">
             <h2>🎯 Cierre y Metas de Progreso</h2>
@@ -296,24 +370,58 @@
 
 <!-- SCRIPT DE INTERACTIVIDAD -->
 <script>
-    /* ---------- ACTIVIDAD 1: MÁQUINA DE COMBINAR ORACIONES ---------- */
+    /* ---------- ACTIVIDAD 1: MÁQUINA DE COMBINAR ORACIONES ----------
+       El verbo y el predicado van SIEMPRE emparejados (verbComplementPairs),
+       para que ninguna combinación resultante quede sin sentido
+       (ej. ya no puede salir "check English on the computer").
+       Solo el sujeto varía de forma independiente, y el verbo se
+       conjuga automáticamente según si el sujeto es singular o plural. */
+
+    const pluralSubjects = ['I', 'We', 'They', 'You'];
+
+    function conjugate(verb, subject) {
+        if (pluralSubjects.includes(subject)) return verb;
+
+        const words = verb.split(' ');
+        let first = words[0];
+
+        if (/(ch|sh|ss|x|o)$/.test(first)) {
+            first += 'es';
+        } else if (/[^aeiou]y$/.test(first)) {
+            first = first.slice(0, -1) + 'ies';
+        } else {
+            first += 's';
+        }
+
+        words[0] = first;
+        return words.join(' ');
+    }
 
     const familia1 = {
-        subject: ['I', 'My mother', 'We'],
-        verb: ['eat', 'cook', 'prepare'],
-        complement: ['breakfast at 8:00 AM', 'lunch for the family', 'dinner in the evening']
+        subjects: ['I', 'My mother', 'We', 'Daniela'],
+        verbComplementPairs: [
+            { verb: 'eat', complement: 'breakfast at 8:00 AM' },
+            { verb: 'cook', complement: 'lunch for the family' },
+            { verb: 'prepare', complement: 'dinner in the evening' }
+        ]
     };
 
     const familia2 = {
-        subject: ['I', 'My boss', 'My coworker'],
-        verb: ['check', 'write', 'study'],
-        complement: ['important documents', 'reports at work', 'English on the computer']
+        subjects: ['I', 'My boss', 'My coworker', 'Carlos'],
+        verbComplementPairs: [
+            { verb: 'check', complement: 'important documents' },
+            { verb: 'write', complement: 'reports at work' },
+            { verb: 'study', complement: 'English on the computer' }
+        ]
     };
 
     const familia3 = {
-        subject: ['I', 'My brother', 'They'],
-        verb: ['clean', 'read', 'watch'],
-        complement: ['the house in the afternoon', 'a book before bed', 'a video at night']
+        subjects: ['I', 'My brother', 'They', 'Daniela'],
+        verbComplementPairs: [
+            { verb: 'clean', complement: 'the house in the afternoon' },
+            { verb: 'read', complement: 'a book before bed' },
+            { verb: 'watch', complement: 'a video at night' }
+        ]
     };
 
     function randomItem(arr) {
@@ -321,9 +429,10 @@
     }
 
     function spinFamily(prefix, familia) {
-        const subject = randomItem(familia.subject);
-        const verb = randomItem(familia.verb);
-        const complement = randomItem(familia.complement);
+        const subject = randomItem(familia.subjects);
+        const pair = randomItem(familia.verbComplementPairs);
+        const verb = conjugate(pair.verb, subject);
+        const complement = pair.complement;
 
         document.getElementById(prefix + '-subject').textContent = subject;
         document.getElementById(prefix + '-verb').textContent = verb;
@@ -410,6 +519,34 @@
             '<li>Conectores encontrados (' + connectorsUsed.length + '): ' + (connectorsUsed.join(', ') || 'ninguno todavía') + '</li>' +
             '<li>Verbos encontrados (' + verbsUsed.length + '): ' + (verbsUsed.join(', ') || 'ninguno todavía') + '</li>' +
             '</ul>';
+    }
+
+    /* ---------- COMPRENSIÓN LECTORA: REVELAR ESTRUCTURA ---------- */
+
+    const plainArticle = 'Daniela wakes up early every day. First, she takes a shower and eats a quick breakfast. Then, she goes to the office and checks her emails. After that, she writes reports for her boss. Finally, she goes home and reads a book before bed.';
+
+    const highlightedArticle =
+        '<span class="hl-subject">Daniela</span> <span class="hl-verb">wakes up</span> <span class="hl-complement">early every day</span>. ' +
+        '<span class="hl-connector">First</span>, <span class="hl-subject">she</span> <span class="hl-verb">takes</span> <span class="hl-complement">a shower</span> and <span class="hl-verb">eats</span> <span class="hl-complement">a quick breakfast</span>. ' +
+        '<span class="hl-connector">Then</span>, <span class="hl-subject">she</span> <span class="hl-verb">goes</span> <span class="hl-complement">to the office</span> and <span class="hl-verb">checks</span> <span class="hl-complement">her emails</span>. ' +
+        '<span class="hl-connector">After that</span>, <span class="hl-subject">she</span> <span class="hl-verb">writes</span> <span class="hl-complement">reports for her boss</span>. ' +
+        '<span class="hl-connector">Finally</span>, <span class="hl-subject">she</span> <span class="hl-verb">goes</span> <span class="hl-complement">home</span> and <span class="hl-verb">reads</span> <span class="hl-complement">a book before bed</span>.';
+
+    let structureVisible = false;
+
+    function toggleStructure() {
+        const articleEl = document.getElementById('readingArticle');
+        const btn = document.getElementById('revealStructureBtn');
+
+        structureVisible = !structureVisible;
+
+        if (structureVisible) {
+            articleEl.innerHTML = highlightedArticle;
+            btn.textContent = '🙈 Ocultar Estructura';
+        } else {
+            articleEl.textContent = plainArticle;
+            btn.textContent = '👁️ Ver Estructura';
+        }
     }
 </script>
 
