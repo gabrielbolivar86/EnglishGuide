@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 2: Construyendo Oraciones de Rutina y Acción</title>
+    <link rel="stylesheet" href="../../assets/course.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- BARRA SUPERIOR -->
+    <div class="lesson-topbar">
+        <a href="../index.html" class="btn-back">← Volver</a>
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Lección 2: Construyendo Oraciones de Rutina y Acción</h1>
+        <div class="subtitle">Sintaxis en Presente Simple y combinación de ideas cotidianas</div>
+    </header>
+
+    <!-- META DE LA CLASE -->
+    <div class="card" style="border-left: 5px solid var(--primary); background: #f0f4fe;">
+        <div style="font-weight: bold; color: var(--primary); font-size: 1.1rem; margin-bottom: 5px;">
+            🎯 Meta de la Clase de Hoy
+        </div>
+        <p style="margin: 0; font-size: 1.05rem; color: #1e293b;">
+            "Comprender la estructura de oraciones simples (Sujeto + Verbo + Predicado) y armar al menos 5 oraciones fluidas sobre actividades cotidianas usando la validación interactiva."
+        </p>
+    </div>
+
+    <!-- CÓDIGO DE COLORES Y VOCABULARIO -->
+    <div class="card">
+        <div class="section-header">
+            <h2>🔤 Palabras de mi Día a Día</h2>
+        </div>
+        <p>Este es el código de colores que usaremos para armar oraciones hoy:</p>
+        <div class="color-legend">
+            <span class="hl-subject">Sujeto (¿Quién?)</span>
+            <span class="hl-verb">Verbo (Acción)</span>
+            <span class="hl-complement">Predicado (Detalle)</span>
+            <span class="hl-connector">Conector (Orden)</span>
+        </div>
+
+        <p style="margin-top: 20px;">Vocabulario de tu entorno real — trabajo, casa y familia:</p>
+        <div class="vocab-grid">
+            <div class="vocab-column">
+                <h4>Sujetos</h4>
+                <span class="hl-subject">I</span>
+                <span class="hl-subject">We</span>
+                <span class="hl-subject">They</span>
+                <span class="hl-subject">My mother</span>
+                <span class="hl-subject">My father</span>
+                <span class="hl-subject">My brother</span>
+                <span class="hl-subject">My boss</span>
+                <span class="hl-subject">My coworker</span>
+                <span class="hl-subject">My client</span>
+            </div>
+            <div class="vocab-column">
+                <h4>Verbos de Acción</h4>
+                <span class="hl-verb">wake up</span>
+                <span class="hl-verb">eat</span>
+                <span class="hl-verb">cook</span>
+                <span class="hl-verb">clean</span>
+                <span class="hl-verb">study</span>
+                <span class="hl-verb">work</span>
+                <span class="hl-verb">read</span>
+                <span class="hl-verb">sleep</span>
+                <span class="hl-verb">check</span>
+                <span class="hl-verb">write</span>
+            </div>
+            <div class="vocab-column">
+                <h4>Predicados (Casa y Trabajo)</h4>
+                <span class="hl-complement">breakfast at 8:00 AM</span>
+                <span class="hl-complement">lunch for the family</span>
+                <span class="hl-complement">the house</span>
+                <span class="hl-complement">English on my computer</span>
+                <span class="hl-complement">important documents</span>
+                <span class="hl-complement">reports at work</span>
+                <span class="hl-complement">a book before bed</span>
+            </div>
+            <div class="vocab-column">
+                <h4>Conectores (Repaso)</h4>
+                <span class="hl-connector">First</span>
+                <span class="hl-connector">Then</span>
+                <span class="hl-connector">Next</span>
+                <span class="hl-connector">After that</span>
+                <span class="hl-connector">Finally</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACTIVIDAD 1: MÁQUINA DE COMBINAR ORACIONES -->
+    <div class="card">
+        <div class="section-header">
+            <h2>🎰 Arma tu Oración</h2>
+            <span class="tag">Actividad interactiva</span>
+        </div>
+        <p>Presiona <strong>Girar</strong> en cada familia de palabras. Todas las combinaciones tienen sentido, ¡así que no hay forma de equivocarse!</p>
+
+        <!-- Familia 1: Comida -->
+        <div class="slot-family">
+            <h4>🍳 Familia 1: Comida</h4>
+            <div class="reel-row">
+                <div class="reel-window hl-subject" id="f1-subject">I</div>
+                <div class="reel-window hl-verb" id="f1-verb">eat</div>
+                <div class="reel-window hl-complement" id="f1-complement">breakfast at 8:00 AM</div>
+            </div>
+            <button class="spin-btn" onclick="spinFamily('f1', familia1)">🎰 Girar</button>
+            <div class="result-sentence" id="f1-result"></div>
+        </div>
+
+        <!-- Familia 2: Oficina -->
+        <div class="slot-family">
+            <h4>💼 Familia 2: Oficina y Estudio</h4>
+            <div class="reel-row">
+                <div class="reel-window hl-subject" id="f2-subject">I</div>
+                <div class="reel-window hl-verb" id="f2-verb">check</div>
+                <div class="reel-window hl-complement" id="f2-complement">important documents</div>
+            </div>
+            <button class="spin-btn" onclick="spinFamily('f2', familia2)">🎰 Girar</button>
+            <div class="result-sentence" id="f2-result"></div>
+        </div>
+
+        <!-- Familia 3: Hogar -->
+        <div class="slot-family">
+            <h4>🏠 Familia 3: Hogar y Descanso</h4>
+            <div class="reel-row">
+                <div class="reel-window hl-subject" id="f3-subject">I</div>
+                <div class="reel-window hl-verb" id="f3-verb">clean</div>
+                <div class="reel-window hl-complement" id="f3-complement">the house in the afternoon</div>
+            </div>
+            <button class="spin-btn" onclick="spinFamily('f3', familia3)">🎰 Girar</button>
+            <div class="result-sentence" id="f3-result"></div>
+        </div>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Combiné al menos 3 oraciones distintas en cada familia.</span>
+        </label>
+    </div>
+
+    <!-- ACTIVIDAD 2: IDENTIFICA LAS PARTES -->
+    <div class="card">
+        <div class="section-header">
+            <h2>🔍 Identifica las Partes</h2>
+            <span class="tag">Actividad interactiva</span>
+        </div>
+        <p>Haz clic en la palabra o frase correcta según lo que se te pide:</p>
+
+        <!-- Oración 1 -->
+        <div style="background: #fafafa; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1; margin-bottom: 20px;">
+            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración 1: <strong>"My mother cooks dinner in the evening."</strong></p>
+
+            <p><strong>¿Cuál es el Sujeto?</strong> (¿Quién realiza la acción?)</p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l1a', 'My mother', true, 'subject')">My mother</button>
+                <button class="word-btn" onclick="checkPartL2('l1a', 'cooks', false, 'verb')">cooks</button>
+                <button class="word-btn" onclick="checkPartL2('l1a', 'dinner in the evening', false, 'complement')">dinner in the evening</button>
+            </div>
+            <div id="l1a-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>¿Cuál es el Verbo?</strong> (¿Qué acción realiza?)</p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l1b', 'My mother', false, 'subject')">My mother</button>
+                <button class="word-btn" onclick="checkPartL2('l1b', 'cooks', true, 'verb')">cooks</button>
+                <button class="word-btn" onclick="checkPartL2('l1b', 'dinner in the evening', false, 'complement')">dinner in the evening</button>
+            </div>
+            <div id="l1b-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>¿Cuál es el Predicado?</strong> (¿Qué detalle o lugar agrega?)</p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l1c', 'My mother', false, 'subject')">My mother</button>
+                <button class="word-btn" onclick="checkPartL2('l1c', 'cooks', false, 'verb')">cooks</button>
+                <button class="word-btn" onclick="checkPartL2('l1c', 'dinner in the evening', true, 'complement')">dinner in the evening</button>
+            </div>
+            <div id="l1c-feedback" class="feedback-message"></div>
+        </div>
+
+        <!-- Oración 2 -->
+        <div style="background: #fafafa; padding: 18px; border-radius: 10px; border: 1px dashed #cbd5e1;">
+            <p style="margin-top:0; font-size: 1.1rem; text-align: center;">Oración 2: <strong>"My boss checks reports at work."</strong></p>
+
+            <p><strong>¿Cuál es el Sujeto?</strong></p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l2a', 'My boss', true, 'subject')">My boss</button>
+                <button class="word-btn" onclick="checkPartL2('l2a', 'checks', false, 'verb')">checks</button>
+                <button class="word-btn" onclick="checkPartL2('l2a', 'reports at work', false, 'complement')">reports at work</button>
+            </div>
+            <div id="l2a-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>¿Cuál es el Verbo?</strong></p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l2b', 'My boss', false, 'subject')">My boss</button>
+                <button class="word-btn" onclick="checkPartL2('l2b', 'checks', true, 'verb')">checks</button>
+                <button class="word-btn" onclick="checkPartL2('l2b', 'reports at work', false, 'complement')">reports at work</button>
+            </div>
+            <div id="l2b-feedback" class="feedback-message"></div>
+
+            <p style="margin-top: 15px;"><strong>¿Cuál es el Predicado?</strong></p>
+            <div class="word-selector">
+                <button class="word-btn" onclick="checkPartL2('l2c', 'My boss', false, 'subject')">My boss</button>
+                <button class="word-btn" onclick="checkPartL2('l2c', 'checks', false, 'verb')">checks</button>
+                <button class="word-btn" onclick="checkPartL2('l2c', 'reports at work', true, 'complement')">reports at work</button>
+            </div>
+            <div id="l2c-feedback" class="feedback-message"></div>
+        </div>
+    </div>
+
+    <!-- PAUSA ACTIVA -->
+    <div class="card pause-card">
+        <h3>☕ Pausa Activa</h3>
+        <p><strong>Tiempo: 10 minutos</strong> - Toma agua, estírate o descansa la vista antes de escribir.</p>
+        <label class="checkbox-container" style="justify-content: center; background: white;">
+            <input type="checkbox">
+            <span>Descanso completado. ¡Continuamos!</span>
+        </label>
+    </div>
+
+    <!-- TALLER DE ESCRITURA -->
+    <div class="card">
+        <div class="section-header">
+            <h2>✍️ Mi Rutina Diaria: Taller de Escritura</h2>
+            <span class="tag">5 min</span>
+        </div>
+        <p><strong>Reto:</strong> Describe your daily routine. Write 5 complete sentences about your daily activities from morning to night using subjects, verbs, complements, and connectors.</p>
+
+        <div class="timer-bar">
+            <span class="timer-display" id="timerDisplay">05:00</span>
+            <button class="timer-btn" onclick="startTimer()">▶ Iniciar Cronómetro</button>
+        </div>
+
+        <textarea id="writingArea" rows="6" placeholder="Escribe aquí tu borrador de 5 oraciones..."></textarea>
+
+        <button class="word-btn" style="margin-top: 12px;" onclick="reviewWriting()">🔎 Revisión Visual</button>
+
+        <div class="review-box" id="reviewBox"></div>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Escribí mis 5 oraciones y revisé mi borrador.</span>
+        </label>
+    </div>
+
+    <!-- GUÍA FÁCIL DE 3 PASOS -->
+    <div class="card" style="background: #fefce8; border-color: #fde68a;">
+        <div class="section-header">
+            <h2>🗺️ Guía Fácil para Escribir</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <div style="background: white; border-radius: 10px; padding: 16px; border: 1px solid #fde68a;">
+                <strong style="color: #b45309;">Paso 1: Planifica en español</strong>
+                <p style="margin: 8px 0 0 0; font-size: 0.92rem;">Anota qué haces primero, qué haces después y qué haces al final.</p>
+            </div>
+            <div style="background: white; border-radius: 10px; padding: 16px; border: 1px solid #fde68a;">
+                <strong style="color: #b45309;">Paso 2: Oraciones simples</strong>
+                <p style="margin: 8px 0 0 0; font-size: 0.92rem;">Arma cada idea en inglés: <span class="hl-subject">Persona</span> + <span class="hl-verb">Acción</span> + <span class="hl-complement">Detalle</span>.</p>
+            </div>
+            <div style="background: white; border-radius: 10px; padding: 16px; border: 1px solid #fde68a;">
+                <strong style="color: #b45309;">Paso 3: Une con conectores</strong>
+                <p style="margin: 8px 0 0 0; font-size: 0.92rem;">Junta tus oraciones con <span class="hl-connector">First</span>, <span class="hl-connector">Then</span>, <span class="hl-connector">Next</span>, <span class="hl-connector">After that</span>, <span class="hl-connector">Finally</span>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CIERRE Y METAS SMART -->
+    <div class="card">
+        <div class="section-header">
+            <h2>🎯 Cierre y Metas de Progreso</h2>
+        </div>
+
+        <div class="meta-box">
+            <div class="meta-title">🎯 Meta de la Clase de Hoy (Verificación):</div>
+            <p>"Construí oraciones simples (Sujeto + Verbo + Predicado) sin omitir el verbo, usando la máquina de combinar y la actividad de identificación."</p>
+        </div>
+
+        <div class="meta-box" style="border-left-color: #818cf8;">
+            <div class="meta-title" style="color: #4f46e5;">📌 Meta Semanal de Vocabulario Real (Miércoles a Miércoles):</div>
+            <p>"Analizar diariamente mi jornada laboral y familiar para identificar 3 palabras o personas de mi entorno real (ej. document, office, my boss) y buscar su equivalente en inglés, anotándolas en mi libreta."</p>
+        </div>
+
+        <div class="meta-box" style="border-left-color: #34d399;">
+            <div class="meta-title" style="color: #059669;">🏆 Meta General del Mes (BYU–Pathway):</div>
+            <p>"Completar 8 sesiones de estudio asistido y 24 actividades autónomas en 4 semanas, avanzando de forma progresiva hacia el examen ELA."</p>
+        </div>
+
+        <label class="checkbox-container">
+            <input type="checkbox">
+            <span>Clase 2 completada y metas acordadas para la semana.</span>
+        </label>
+    </div>
+
+</div>
+
+<!-- SCRIPT DE INTERACTIVIDAD -->
+<script>
+    /* ---------- ACTIVIDAD 1: MÁQUINA DE COMBINAR ORACIONES ---------- */
+
+    const familia1 = {
+        subject: ['I', 'My mother', 'We'],
+        verb: ['eat', 'cook', 'prepare'],
+        complement: ['breakfast at 8:00 AM', 'lunch for the family', 'dinner in the evening']
+    };
+
+    const familia2 = {
+        subject: ['I', 'My boss', 'My coworker'],
+        verb: ['check', 'write', 'study'],
+        complement: ['important documents', 'reports at work', 'English on the computer']
+    };
+
+    const familia3 = {
+        subject: ['I', 'My brother', 'They'],
+        verb: ['clean', 'read', 'watch'],
+        complement: ['the house in the afternoon', 'a book before bed', 'a video at night']
+    };
+
+    function randomItem(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function spinFamily(prefix, familia) {
+        const subject = randomItem(familia.subject);
+        const verb = randomItem(familia.verb);
+        const complement = randomItem(familia.complement);
+
+        document.getElementById(prefix + '-subject').textContent = subject;
+        document.getElementById(prefix + '-verb').textContent = verb;
+        document.getElementById(prefix + '-complement').textContent = complement;
+
+        const resultEl = document.getElementById(prefix + '-result');
+        resultEl.innerHTML =
+            '<span class="hl-subject">' + subject + '</span> ' +
+            '<span class="hl-verb">' + verb + '</span> ' +
+            '<span class="hl-complement">' + complement + '</span>.';
+    }
+
+    /* ---------- ACTIVIDAD 2: IDENTIFICA LAS PARTES ---------- */
+
+    function checkPartL2(stepId, word, isCorrect, category) {
+        const feedbackEl = document.getElementById(stepId + '-feedback');
+        feedbackEl.style.display = 'block';
+
+        if (isCorrect) {
+            feedbackEl.className = 'feedback-message feedback-success';
+            feedbackEl.innerHTML = '✔ ¡Excelente! Alineaste correctamente la acción con su sujeto.';
+            return;
+        }
+
+        feedbackEl.className = 'feedback-message feedback-error';
+
+        if (category === 'verb') {
+            feedbackEl.innerHTML = '❓ Lee la parte seleccionada: ¿Qué acción (palabra verde) realiza la persona? ¿Dónde está el verbo principal?';
+        } else if (category === 'complement') {
+            feedbackEl.innerHTML = '❓ ¿Esa palabra indica una acción o es el detalle/lugar de la oración?';
+        } else {
+            feedbackEl.innerHTML = '❓ ¿Quién es la persona que realiza la acción en esta oración?';
+        }
+    }
+
+    /* ---------- TALLER DE ESCRITURA: CRONÓMETRO ---------- */
+
+    let timerSeconds = 300;
+    let timerInterval = null;
+
+    function updateTimerDisplay() {
+        const minutes = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+        const seconds = (timerSeconds % 60).toString().padStart(2, '0');
+        document.getElementById('timerDisplay').textContent = minutes + ':' + seconds;
+    }
+
+    function startTimer() {
+        if (timerInterval) return;
+        timerInterval = setInterval(() => {
+            if (timerSeconds <= 0) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                document.getElementById('timerDisplay').textContent = '¡Tiempo!';
+                return;
+            }
+            timerSeconds--;
+            updateTimerDisplay();
+        }, 1000);
+    }
+
+    /* ---------- TALLER DE ESCRITURA: REVISIÓN VISUAL ---------- */
+
+    function reviewWriting() {
+        const text = document.getElementById('writingArea').value.toLowerCase();
+        const connectors = ['first', 'then', 'next', 'after that', 'finally'];
+        const verbs = ['wake up', 'eat', 'cook', 'clean', 'study', 'work', 'read', 'sleep', 'check', 'write'];
+
+        const connectorsUsed = connectors.filter(c => text.includes(c));
+        const verbsUsed = verbs.filter(v => text.includes(v));
+
+        const box = document.getElementById('reviewBox');
+        box.style.display = 'block';
+
+        let message = '';
+        if (connectorsUsed.length >= 3 && verbsUsed.length >= 3) {
+            message = '✔ ¡Buen trabajo! Tu párrafo tiene buena variedad de conectores y verbos.';
+        } else {
+            message = '💡 Intenta usar más conectores y verbos distintos para que tu párrafo fluya mejor.';
+        }
+
+        box.innerHTML =
+            '<strong>' + message + '</strong>' +
+            '<ul>' +
+            '<li>Conectores encontrados (' + connectorsUsed.length + '): ' + (connectorsUsed.join(', ') || 'ninguno todavía') + '</li>' +
+            '<li>Verbos encontrados (' + verbsUsed.length + '): ' + (verbsUsed.join(', ') || 'ninguno todavía') + '</li>' +
+            '</ul>';
+    }
+</script>
+
+</body>
+</html>
