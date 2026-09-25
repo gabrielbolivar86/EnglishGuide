@@ -44,6 +44,17 @@
             <span class="hl-connector">Conector (Orden)</span>
         </div>
 
+        <div style="background: #fef9ec; border: 1px solid #fde68a; border-radius: 10px; padding: 14px 16px; margin: 18px 0;">
+            <div style="font-weight: bold; color: #92400e; margin-bottom: 4px;">🔗 Un conector nuevo: <span class="hl-connector" style="font-size: 1rem;">And</span></div>
+            <p style="margin: 0; font-size: 0.92rem; color: #78350f;">
+                <strong>And</strong> significa <strong>"y"</strong> en español. A diferencia de First, Then, After that y Finally (que indican <em>orden</em>), <strong>and</strong> solo une dos acciones o ideas que pasan en el mismo momento, sin decir cuál fue antes o después.
+                <br><br>
+                <strong>Ejemplo:</strong> <span class="hl-subject">She</span> <span class="hl-verb">takes</span> <span class="hl-complement">a shower</span> <span class="hl-connector">and</span> <span class="hl-verb">eats</span> <span class="hl-complement">breakfast</span>.
+                <br>
+                <em>(Ella se ducha y desayuna — las dos cosas, sin marcar un orden específico entre ellas.)</em>
+            </p>
+        </div>
+
         <p style="margin-top: 20px;">Vocabulario de tu entorno real — trabajo, casa y familia:</p>
         <div class="vocab-grid">
             <div class="vocab-column">
@@ -90,6 +101,7 @@
                 <span class="hl-connector">Next</span>
                 <span class="hl-connector">After that</span>
                 <span class="hl-connector">Finally</span>
+                <span class="hl-connector">And (nuevo)</span>
             </div>
         </div>
     </div>
@@ -310,6 +322,39 @@
         </div>
         <div id="reading-q2-feedback" class="feedback-message"></div>
 
+        <p style="margin-top:20px;"><strong>Pregunta 3:</strong> ¿A dónde va Daniela después de desayunar?</p>
+        <div id="reading-q3-options">
+            <div class="interactive-option" onclick="checkQuiz('reading-q3', this, true)">
+                A) A la oficina.
+            </div>
+            <div class="interactive-option" onclick="checkQuiz('reading-q3', this, false)">
+                B) A dormir.
+            </div>
+        </div>
+        <div id="reading-q3-feedback" class="feedback-message"></div>
+
+        <p style="margin-top:20px;"><strong>Pregunta 4:</strong> ¿Qué hace Daniela al final del día, antes de dormir?</p>
+        <div id="reading-q4-options">
+            <div class="interactive-option" onclick="checkQuiz('reading-q4', this, false)">
+                A) Revisa sus correos electrónicos.
+            </div>
+            <div class="interactive-option" onclick="checkQuiz('reading-q4', this, true)">
+                B) Lee un libro.
+            </div>
+        </div>
+        <div id="reading-q4-feedback" class="feedback-message"></div>
+
+        <p style="margin-top:20px;"><strong>Pregunta 5:</strong> ¿Qué conector marca la última acción de su rutina?</p>
+        <div id="reading-q5-options">
+            <div class="interactive-option" onclick="checkQuiz('reading-q5', this, false)">
+                A) Then
+            </div>
+            <div class="interactive-option" onclick="checkQuiz('reading-q5', this, true)">
+                B) Finally
+            </div>
+        </div>
+        <div id="reading-q5-feedback" class="feedback-message"></div>
+
         <button class="word-btn" id="revealStructureBtn" style="margin-top: 18px;" onclick="toggleStructure()">👁️ Ver Estructura</button>
 
         <label class="checkbox-container">
@@ -519,6 +564,32 @@
             '<li>Conectores encontrados (' + connectorsUsed.length + '): ' + (connectorsUsed.join(', ') || 'ninguno todavía') + '</li>' +
             '<li>Verbos encontrados (' + verbsUsed.length + '): ' + (verbsUsed.join(', ') || 'ninguno todavía') + '</li>' +
             '</ul>';
+    }
+
+    /* ---------- COMPRENSIÓN LECTORA: SELECCIÓN DE RESPUESTAS ---------- */
+
+    function checkQuiz(quizId, element, isCorrect) {
+        const feedbackEl = document.getElementById(quizId + '-feedback');
+        feedbackEl.style.display = 'block';
+
+        // Restablece el estilo de las demás opciones de esta misma pregunta
+        const siblings = element.parentElement.querySelectorAll('.interactive-option');
+        siblings.forEach(opt => {
+            opt.style.borderColor = '#cbd5e1';
+            opt.style.backgroundColor = 'white';
+        });
+
+        if (isCorrect) {
+            element.style.borderColor = '#10b981';
+            element.style.backgroundColor = '#d1fae5';
+            feedbackEl.className = 'feedback-message feedback-success';
+            feedbackEl.innerHTML = '✔ ¡Excelente! Respuesta correcta.';
+        } else {
+            element.style.borderColor = '#ef4444';
+            element.style.backgroundColor = '#fee2e2';
+            feedbackEl.className = 'feedback-message feedback-error';
+            feedbackEl.innerHTML = '✖ Respuesta incorrecta. Lee con atención el texto e inténtalo de nuevo.';
+        }
     }
 
     /* ---------- COMPRENSIÓN LECTORA: REVELAR ESTRUCTURA ---------- */
