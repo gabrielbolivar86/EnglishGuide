@@ -1,0 +1,76 @@
+{
+  "titulo": "Adaptación Curricular Mensual",
+  "duracionClase": "90 min",
+  "meta": "Completar 8 sesiones asistidas y 24 actividades de práctica autónoma en 4 semanas, dominando la estructura del Presente Simple y el uso de 12 conectores funcionales, para resolver con más del 80% de aciertos los ejercicios de comprensión lectora (Reading) y redactar fluidamente los textos del examen ELA de BYU–Pathway.",
+  "semanas": [
+    {
+      "titulo": "Semana 1: Vocabulario de Rutina, Estructura Básica y Conectores de Secuencia",
+      "clases": [
+        {
+          "numero": 1,
+          "dia": "Miércoles",
+          "tema": "Construcción de Oraciones y Secuencia Temporal",
+          "descripcion": "Reconocer la estructura Sujeto + Verbo + Complemento y aplicar 4 conectores de secuencia en hábitos diarios.",
+          "leccion": "lesson1"
+        },
+        {
+          "numero": 2,
+          "dia": "Viernes",
+          "tema": "Redacción de Rutina Breve",
+          "descripcion": "Redactar un texto continuo de 5 oraciones en Presente Simple usando conectores de tiempo (Prompt Intermedio ELA)."
+        }
+      ]
+    },
+    {
+      "titulo": "Semana 2: Expresión de Gustos, Preferencias y Conectores Causal-Lógicos",
+      "clases": [
+        {
+          "numero": 3,
+          "dia": "Miércoles",
+          "tema": "Conectores de Causa y Adición",
+          "descripcion": "Construir oraciones compuestas en presente simple relacionando ideas con 'because', 'so' y 'also'."
+        },
+        {
+          "numero": 4,
+          "dia": "Viernes",
+          "tema": "Comprensión Lectora e Inferencias",
+          "descripcion": "Leer párrafos en presente simple y responder preguntas de opción múltiple tipo ELA."
+        }
+      ]
+    },
+    {
+      "titulo": "Semana 3: Conectores Organizativos y Estructura del Ensayo Corto",
+      "clases": [
+        {
+          "numero": 5,
+          "dia": "Miércoles",
+          "tema": "Organización de Párrafos",
+          "descripcion": "Organizar un esquema visual utilizando conectores de ejemplificación y cierre (for example, in conclusion)."
+        },
+        {
+          "numero": 6,
+          "dia": "Viernes",
+          "tema": "Redacción del Prompt Avanzado ELA",
+          "descripcion": "Redactar un texto de 2 párrafos sobre una situación cotidiana mediante el método I Do, We Do, You Do."
+        }
+      ]
+    },
+    {
+      "titulo": "Semana 4: Estrategias de Examen, Lectura Integral y Simulacro",
+      "clases": [
+        {
+          "numero": 7,
+          "dia": "Miércoles",
+          "tema": "Estrategias de Lectura y Descarte",
+          "descripcion": "Resolver preguntas de opción múltiple aplicando técnicas de subrayado de conectores y palabras clave."
+        },
+        {
+          "numero": 8,
+          "dia": "Viernes",
+          "tema": "Simulacro Integrado y Revisión Final",
+          "descripcion": "Completar un ensayo corto y ejercicios de comprensión verificando el logro de la Meta General."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+/* ==========================================================
+   LECCIONES — componentes reutilizables
+   Se aplican dentro de <div class="lesson"> (LessonScreen)
+   ========================================================== */
+
+:root {
+  /* Código de colores gramaticales (igual en todas las lecciones) */
+  --subject-bg: #dcfce7;    --subject-text: #166534;
+  --verb-bg: #dbeafe;       --verb-text: #1e40af;
+  --connector-bg: #fef3c7;  --connector-text: #92400e;
+  --complement-bg: #f3e8ff; --complement-text: #6b21a8;
+
+  --success-bg: #d1fae5; --success-text: #065f46;
+  --error-bg: #fee2e2;   --error-text: #991b1b;
+}
+
+.lesson { max-width: 880px; margin: 0 auto; padding: 20px 16px 48px; }
+.lesson .card { margin-bottom: 20px; }
+
+/* Barra superior y encabezado */
+.lesson-topbar { margin-bottom: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.btn-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface); color: var(--primary); text-decoration: none;
+  padding: 8px 16px; border-radius: var(--radius-sm); font-weight: 600; font-size: .9rem;
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+}
+.btn-back:hover { background: var(--primary-soft); border-color: var(--primary); }
+
+.lesson-header {
+  background: var(--brand-gradient); color: #fff;
+  padding: 28px 24px; border-radius: var(--radius-lg);
+  text-align: center; margin-bottom: 22px;
+  box-shadow: 0 10px 26px rgba(6, 182, 212, .2);
+}
+.lesson-header h1 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.1rem); color: #fff; }
+.lesson-header .subtitle { opacity: .95; margin-top: 6px; }
+
+.section-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-bottom: 15px;
+}
+.section-header h2 { margin: 0; font-size: 1.25rem; }
+.tag {
+  background: var(--primary-soft); color: var(--primary);
+  padding: 4px 12px; border-radius: 999px; font-weight: 700; font-size: .82rem; white-space: nowrap;
+}
+.tag-extra { background: #fef3c7; color: #92400e; }
+
+/* Resaltadores gramaticales */
+.hl-connector, .hl-subject, .hl-verb, .hl-complement { padding: 2px 8px; border-radius: 6px; font-weight: 700; }
+.hl-connector  { background: var(--connector-bg);  color: var(--connector-text); }
+.hl-subject    { background: var(--subject-bg);    color: var(--subject-text); }
+.hl-verb       { background: var(--verb-bg);       color: var(--verb-text); }
+.hl-complement { background: var(--complement-bg); color: var(--complement-text); }
+
+.color-legend {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  background: var(--surface-2); padding: 12px 16px; border-radius: var(--radius);
+  margin: 15px 0; border: 1px solid var(--border);
+}
+.formula-box {
+  display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap;
+  margin: 20px 0; background: var(--surface-2); padding: 15px;
+  border-radius: var(--radius-sm); border: 1px dashed var(--border-strong);
+}
+
+/* Vocabulario */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 15px 0; }
+.vocab-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
+.vocab-item strong { color: var(--primary); display: block; }
+.vocab-item span { font-size: .9rem; color: var(--muted); }
+
+/* Cajas de contenido */
+.example-panel { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin: 12px 0; }
+.reading-box {
+  background: var(--surface-2); padding: 15px 18px; margin: 15px 0;
+  border-left: 4px solid var(--primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.reading-box p:first-child { margin-top: 0; }
+.reading-box p:last-child { margin-bottom: 0; }
+.exercise-box {
+  background: var(--surface-2); padding: 16px; border-radius: var(--radius);
+  border: 1px dashed var(--border-strong); margin-bottom: 16px;
+}
+.exercise-box > p:first-child { margin-top: 0; }
+.sentence { font-size: 1.1rem; text-align: center; }
+
+.lesson input[type="text"], .lesson textarea {
+  width: 100%; padding: 11px 12px; margin-top: 6px;
+  border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  font: inherit; background: var(--surface); color: var(--text);
+}
+.lesson input[type="text"]:focus, .lesson textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.radio-list label { display: block; padding: 6px 0; cursor: pointer; }
+
+/* Interactivos */
+.checkbox-container {
+  display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none;
+  background: var(--surface-2); border: 1px solid var(--border);
+  padding: 12px 16px; border-radius: var(--radius); margin-top: 18px;
+}
+.checkbox-container:hover { border-color: var(--primary); }
+.checkbox-container input { width: 20px; height: 20px; accent-color: var(--primary); cursor: pointer; flex: none; }
+.checkbox-container.centered { justify-content: center; background: var(--surface); }
+
+.word-selector { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+.word-btn {
+  padding: 9px 15px; border: 2px solid var(--border-strong); background: var(--surface);
+  border-radius: var(--radius-sm); font: 600 1rem var(--font); color: var(--text); cursor: pointer;
+}
+.word-btn:hover { border-color: var(--primary); }
+.interactive-option {
+  padding: 12px 16px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  margin: 8px 0; cursor: pointer; background: var(--surface);
+}
+.interactive-option:hover { border-color: var(--primary); }
+.word-picker + .word-picker { margin-top: 14px; }
+.word-picker p { margin: 0 0 4px; }
+.interactive-option.correct { border-color: #10b981; background: var(--success-bg); }
+.interactive-option.wrong { border-color: #ef4444; background: var(--error-bg); }
+
+.feedback-message { margin-top: 10px; padding: 10px 14px; border-radius: var(--radius-sm); font-weight: 600; display: none; }
+.feedback-message.show { display: block; }
+.feedback-success { background: var(--success-bg); color: var(--success-text); border: 1px solid #a7f3d0; }
+.feedback-error { background: var(--error-bg); color: var(--error-text); border: 1px solid #fecaca; }
+
+/* Secciones especiales */
+.pause-card { background: #f0fdf4; border-color: #bbf7d0; text-align: center; }
+.extra-banner { border-left: 5px solid #f59e0b; background: #fffbeb; }
+.extra-banner h3 { color: #b45309; margin: 0 0 4px; font-size: 1.15rem; }
+.extra-banner p { margin: 0; color: #92400e; font-size: .95rem; }
+
+.meta-box { background: #fdf2f8; border-left: 4px solid #f472b6; padding: 14px 16px; margin-bottom: 14px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.meta-box p { margin: 4px 0 0; }
+.meta-title { font-weight: 700; color: #db2777; }
+.meta-box.meta-week { background: #eef2ff; border-left-color: #818cf8; }
+.meta-box.meta-week .meta-title { color: #4f46e5; }
+.meta-box.meta-month { background: #ecfdf5; border-left-color: #34d399; }
+.meta-box.meta-month .meta-title { color: #059669; }
+
+.mt { margin-top: 16px; }

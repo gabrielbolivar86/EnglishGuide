@@ -1,0 +1,25 @@
+{
+  "titulo": "Adaptación Curricular Mensual",
+  "duracionClase": "90 min",
+  "meta": "Escribe aquí la meta SMART general del mes.",
+  "semanas": [
+    {
+      "titulo": "Semana 1: Tema de la semana",
+      "clases": [
+        {
+          "numero": 1,
+          "dia": "Lunes",
+          "tema": "Título de la clase",
+          "descripcion": "Objetivo de la clase en una o dos oraciones.",
+          "leccion": "lesson1"
+        },
+        {
+          "numero": 2,
+          "dia": "Miércoles",
+          "tema": "Título de la clase",
+          "descripcion": "Clase sin lección escrita todavía: no lleva el campo \"leccion\"."
+        }
+      ]
+    }
+  ]
+}
