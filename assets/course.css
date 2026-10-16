@@ -531,3 +531,207 @@ textarea, input[type="text"] {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(21, 128, 61, 0.35);
 }
+
+/* ==========================================
+   LECCIÓN 3: PREPOSICIONES / DETERMINANTES
+   (5º color del código gramatical)
+   ========================================== */
+
+:root {
+    --preposition-color: #ffe4e6;
+    --preposition-text: #9f1239;
+}
+
+.hl-preposition {
+    background-color: var(--preposition-color);
+    color: var(--preposition-text);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.vocab-column .hl-preposition {
+    display: block;
+    text-align: center;
+    padding: 6px 10px;
+}
+
+/* ==========================================
+   LECCIÓN 3: INSTRUCCIONES BILINGÜES
+   ========================================== */
+
+.instruction {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 6px 0;
+}
+
+.es-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid #c7d2fe;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.es-toggle:hover {
+    background: #c7d2fe;
+}
+
+.es-text {
+    display: none;
+    margin: 8px 0 4px 0;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border-left: 3px solid #a5b4fc;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+    color: #475569;
+    font-style: italic;
+}
+
+.es-text.is-open {
+    display: block;
+}
+
+/* ==========================================
+   LECCIÓN 3: TARJETAS DE REGLAS Y MATICES
+   ========================================== */
+
+.rule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin: 15px 0;
+}
+
+.rule-card {
+    background: #fafafa;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid var(--verb-text);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.rule-card h4 {
+    margin: 0 0 4px 0;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.rule-card .rule-when {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.rule-card .rule-example {
+    display: block;
+    margin: 6px 0;
+    font-size: 0.98rem;
+}
+
+.compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.compare-cell {
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+}
+
+.compare-cell.literal {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+}
+
+.compare-cell.natural {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+}
+
+.compare-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.compare-cell.literal .compare-label { color: #be123c; }
+.compare-cell.natural .compare-label { color: #15803d; }
+
+.nuance-box {
+    background: #fef9ec;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 18px 0 0 0;
+}
+
+.nuance-box .nuance-title {
+    font-weight: bold;
+    color: #92400e;
+    margin-bottom: 8px;
+}
+
+/* Caja de ejercicio (antes era estilo en línea en la Lección 2) */
+.exercise-box {
+    background: #fafafa;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px dashed #cbd5e1;
+    margin-bottom: 18px;
+}
+
+.exercise-box .exercise-sentence {
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.word-btn.is-correct {
+    border-color: #10b981;
+    background: #d1fae5;
+}
+
+.word-btn.is-wrong {
+    border-color: #ef4444;
+    background: #fee2e2;
+}
+
+.pathway-box {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+.pathway-box .pathway-title {
+    font-weight: bold;
+    color: #0369a1;
+    margin-bottom: 8px;
+}
+
+.pathway-box ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+@media (max-width: 560px) {
+    .compare-row { grid-template-columns: 1fr; }
+    h1 { font-size: 1.6rem; }
+}
