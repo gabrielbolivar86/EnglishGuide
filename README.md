@@ -84,6 +84,13 @@ Todos se importan desde `src/components/lesson/index.js`:
 | `RadioQuestion` | Opción múltiple sin corrección (para resolver en clase) |
 | `Check` | Checkbox de progreso (se recuerda en el dispositivo) |
 | `Pause`, `ExtraBanner`, `Goals` | Pausa activa, separador de extras, metas clase/semana/mes |
+| `ClassGoal`, `Tip`, `StepsGuide` | Meta destacada al inicio, nota/dato nuevo, guía de pasos |
+| `VocabColumns` | Vocabulario en columnas por categoría gramatical |
+| `SentenceSlot` | Máquina para combinar oraciones (conjuga el verbo sola) |
+| `PartsQuiz` | Identificar Sujeto / Verbo / Predicado de una oración |
+| `Timer` | Cronómetro regresivo |
+| `WritingCheck` | Escritura con "Revisión Visual" de conectores y verbos |
+| `StructuredReading` | Lectura con botón "Ver Estructura" que la colorea |
 
 ¿Necesitas un bloque nuevo? Créalo en `src/components/lesson/` y expórtalo en su `index.js`. Queda disponible para todas las lecciones.
 

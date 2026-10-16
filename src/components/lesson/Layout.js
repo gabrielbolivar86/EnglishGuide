@@ -28,10 +28,10 @@ export function Block({ title, children }) {
 }
 
 /** Pausa activa */
-export function Pause({ minutes = 10, children }) {
+export function Pause({ minutes = 10, title = '☕ Pausa de Recarga Activa', children }) {
   return html`
     <section class="card pause-card">
-      <h3>☕ Pausa de Recarga Activa</h3>
+      <h3>${title}</h3>
       <p><strong>Tiempo: ${minutes} minutos</strong> - ${children || 'Momento de descansar la vista, estirarse o tomar agua.'}</p>
     </section>`;
 }

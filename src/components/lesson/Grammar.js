@@ -13,11 +13,14 @@ export function Hl({ t, children }) {
   return html`<span class=${GRAMMAR[t]?.cls}>${children}</span>`;
 }
 
-/** Leyenda del código de colores */
-export function ColorLegend({ items = Object.keys(GRAMMAR) }) {
+/**
+ * Leyenda del código de colores. Orden y textos personalizables:
+ * <ColorLegend items=${['subject','verb']} labels=${{ subject: 'Sujeto (¿Quién?)' }} />
+ */
+export function ColorLegend({ items = Object.keys(GRAMMAR), labels = {} }) {
   return html`
     <div class="color-legend">
-      ${items.map((t) => html`<${Hl} t=${t}>${GRAMMAR[t].label}<//>`)}
+      ${items.map((t) => html`<${Hl} t=${t}>${labels[t] || GRAMMAR[t].label}<//>`)}
     </div>`;
 }
 

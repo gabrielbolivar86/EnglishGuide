@@ -1,0 +1,533 @@
+/* ==========================================
+   ESTILOS BASE Y VARIABLES DEL CURSO DE INGLÉS
+   ========================================== */
+
+:root {
+    /* Paleta de colores generales */
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #334155;
+    --primary: #6366f1;
+    --primary-light: #e0e7ff;
+    
+    /* Código de Colores Gramaticales (Pastel) */
+    --subject-color: #dcfce7;
+    --subject-text: #166534;
+    --verb-color: #dbeafe;
+    --verb-text: #1e40af;
+    --connector-color: #fef3c7;
+    --connector-text: #92400e;
+    --complement-color: #f3e8ff;
+    --complement-text: #6b21a8;
+
+    /* Estado de feedback */
+    --success-bg: #d1fae5;
+    --success-text: #065f46;
+    --error-bg: #fee2e2;
+    --error-text: #991b1b;
+
+    /* Dimensiones y bordes */
+    --border-radius: 14px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+header {
+    background: linear-gradient(135deg, #818cf8, #c084fc);
+    color: white;
+    padding: 28px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+h1 { 
+    margin: 0; 
+    font-size: 2.1rem; 
+}
+
+.subtitle { 
+    font-size: 1.05rem; 
+    opacity: 0.95; 
+    margin-top: 6px; 
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+.section-title {
+    font-size: 1.35rem;
+    color: #1e293b;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ==========================================
+   RESALTADORES Y LEYENDA GRAMATICAL
+   ========================================== */
+
+.hl-connector { 
+    background-color: var(--connector-color); 
+    color: var(--connector-text); 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    font-weight: 700; 
+}
+
+.hl-subject { 
+    background-color: var(--subject-color); 
+    color: var(--subject-text); 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    font-weight: 700; 
+}
+
+.hl-verb { 
+    background-color: var(--verb-color); 
+    color: var(--verb-text); 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    font-weight: 700; 
+}
+
+.hl-complement { 
+    background-color: var(--complement-color); 
+    color: var(--complement-text); 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    font-weight: 700; 
+}
+
+.color-legend {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.example-box {
+    background: #ffffff;
+    border: 2px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+
+.example-tag {
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   COMPONENTES INTERACTIVOS
+   ========================================== */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.98rem;
+    cursor: pointer;
+    user-select: none;
+    background: #f1f5f9;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-top: 18px;
+    transition: background 0.2s;
+}
+
+.checkbox-container:hover {
+    background: #e2e8f0;
+}
+
+.checkbox-container input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+.word-selector {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.word-btn {
+    padding: 10px 16px;
+    border: 2px solid #cbd5e1;
+    background: white;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.word-btn:hover {
+    border-color: var(--primary);
+    background: #f8fafc;
+}
+
+.interactive-option {
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: white;
+}
+
+.interactive-option:hover {
+    border-color: var(--primary);
+    background: #f8fafc;
+}
+
+.feedback-message {
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: none;
+}
+
+.feedback-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid #a7f3d0;
+}
+
+.feedback-error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid #fecaca;
+}
+
+/* ==========================================
+   SECCIONES ESPECIALES (PAUSA Y METAS)
+   ========================================== */
+
+.pause-card {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    text-align: center;
+}
+
+.meta-box {
+    background: #fdf2f8;
+    border-left: 4px solid #f472b6;
+    padding: 16px;
+    margin-bottom: 14px;
+    border-radius: 0 10px 10px 0;
+}
+
+.meta-title { 
+    font-weight: bold; 
+    color: #db2777; 
+    margin-bottom: 4px; 
+}
+
+/* ==========================================
+   LECCIÓN 2: VOCABULARIO EN COLUMNAS
+   ========================================== */
+
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 15px 0;
+}
+
+.vocab-column h4 {
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.vocab-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.vocab-column .hl-subject,
+.vocab-column .hl-verb,
+.vocab-column .hl-complement,
+.vocab-column .hl-connector {
+    display: block;
+    text-align: center;
+    padding: 6px 10px;
+}
+
+/* ==========================================
+   LECCIÓN 2: MÁQUINA DE COMBINAR ORACIONES
+   ("Casino Sintáctico")
+   ========================================== */
+
+.slot-family {
+    background: #fafafa;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.slot-family h4 {
+    margin: 0 0 12px 0;
+    color: var(--primary);
+}
+
+.reel-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.reel-window {
+    flex: 1 1 140px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid #fbbf24;
+    background: linear-gradient(#fff, #fef9ec);
+    padding: 6px 10px;
+}
+
+.spin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.98rem;
+    transition: transform 0.15s ease;
+}
+
+.spin-btn:hover {
+    transform: translateY(-2px);
+}
+
+.result-sentence {
+    margin-top: 12px;
+    background: white;
+    border: 2px solid #e0e7ff;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 1.05rem;
+    min-height: 24px;
+}
+
+/* ==========================================
+   LECCIÓN 2: TALLER DE ESCRITURA CON CRONÓMETRO
+   ========================================== */
+
+.timer-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    background: #f1f5f9;
+    padding: 14px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.timer-display {
+    font-family: 'Courier New', monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 80px;
+    text-align: center;
+}
+
+.timer-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.timer-btn:hover {
+    opacity: 0.9;
+}
+
+.review-box {
+    margin-top: 14px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 10px;
+    padding: 14px;
+    display: none;
+}
+
+.review-box ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+}
+
+/* ==========================================
+   ENCABEZADO DE SECCIÓN CON ETIQUETA DE TIEMPO
+   (usado en las páginas de lección)
+   ========================================== */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #1e293b;
+}
+
+.tag {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.formula-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+}
+
+/* ==========================================
+   BARRA SUPERIOR DE LECCIÓN (botón Volver)
+   Se coloca ANTES del header, no encima,
+   para que nunca se sobreponga al título.
+   ========================================== */
+
+.lesson-topbar {
+    margin-bottom: 14px;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+/* ==========================================
+   BOTÓN DE CLASE VIRTUAL
+   ========================================== */
+
+.meet-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.meet-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(21, 128, 61, 0.35);
+}

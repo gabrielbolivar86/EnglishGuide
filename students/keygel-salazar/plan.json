@@ -16,8 +16,9 @@
         {
           "numero": 2,
           "dia": "Viernes",
-          "tema": "Redacción de Rutina Breve",
-          "descripcion": "Redactar un texto continuo de 5 oraciones en Presente Simple usando conectores de tiempo (Prompt Intermedio ELA)."
+          "tema": "Construyendo Oraciones de Rutina y Acción",
+          "descripcion": "Armar oraciones simples (Sujeto + Verbo + Predicado) sobre actividades cotidianas.",
+          "leccion": "lesson2"
         }
       ]
     },

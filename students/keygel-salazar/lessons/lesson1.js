@@ -27,7 +27,7 @@ export default function Lesson1() {
       <${ColorLegend} />
     <//>
 
-    <${Section} n=${1} title="Presente Simple y Conectores" minutes=${15}>
+    <${Section} n=${1} title="Teoría Leve: Presente Simple y Conectores" minutes=${15}>
       <p>Estructura básica para construir oraciones breves y claras:</p>
       <${Formula} parts=${['connector', 'subject', 'verb', 'complement']} />
       <h4>Conectores de Orden (Sequence Connectors):</h4>
@@ -78,6 +78,7 @@ export default function Lesson1() {
     <${Section} n=${5} title="Cierre y Metas de Progreso" minutes=${10}>
       <p>Para finalizar la lección, repasamos los 3 niveles de metas configurados para garantizar tu éxito hacia BYU–Pathway:</p>
       <${Goals}
+        claseTitulo="Meta de esta Clase (Lograda Hoy)"
         clase="Completar un diagrama visual con código de colores e identificar correctamente 5 conectores de secuencia (first, next, then, after that, finally) en un texto corto de lectura."
         semana="Escribir 1 párrafo diario de 4 a 5 oraciones en inglés sobre mis actividades cotidianas usando conectores de secuencia (first, then, after that, finally) de lunes a sábado (6 párrafos en total) en mi libreta para dominar la primera pregunta del examen ELA."
         mesTitulo="Meta General del Mes (BYU–Pathway)"
@@ -85,7 +86,7 @@ export default function Lesson1() {
       <${Check}>Clase 1 completada y metas acordadas para la semana.<//>
     <//>
 
-    <${ExtraBanner} />
+    <${ExtraBanner}>Estos ejercicios no se hicieron durante la clase en vivo. Son material adicional para que Keygel practique por su cuenta cuando quiera reforzar lo aprendido.<//>
 
     <${Section} title="Extra 1. Identificación Visual de Elementos" tag="Práctica individual" extra>
       <p>Practica identificando cada parte de las oraciones en Presente Simple:</p>
