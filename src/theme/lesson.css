@@ -9,6 +9,7 @@
   --verb-bg: #dbeafe;       --verb-text: #1e40af;
   --connector-bg: #fef3c7;  --connector-text: #92400e;
   --complement-bg: #f3e8ff; --complement-text: #6b21a8;
+  --preposition-bg: #ffe4e6; --preposition-text: #9f1239;
 
   --success-bg: #d1fae5; --success-text: #065f46;
   --error-bg: #fee2e2;   --error-text: #991b1b;
@@ -48,11 +49,12 @@
 .tag-extra { background: #fef3c7; color: #92400e; }
 
 /* Resaltadores gramaticales */
-.hl-connector, .hl-subject, .hl-verb, .hl-complement { padding: 2px 8px; border-radius: 6px; font-weight: 700; }
+.hl-connector, .hl-subject, .hl-verb, .hl-complement, .hl-preposition { padding: 2px 8px; border-radius: 6px; font-weight: 700; }
 .hl-connector  { background: var(--connector-bg);  color: var(--connector-text); }
 .hl-subject    { background: var(--subject-bg);    color: var(--subject-text); }
 .hl-verb       { background: var(--verb-bg);       color: var(--verb-text); }
 .hl-complement { background: var(--complement-bg); color: var(--complement-text); }
+.hl-preposition { background: var(--preposition-bg); color: var(--preposition-text); }
 
 .color-legend {
   display: flex; gap: 10px; flex-wrap: wrap;
@@ -187,3 +189,35 @@
 .step { background: var(--surface); border-radius: var(--radius-sm); padding: 16px; border: 1px solid #fde68a; }
 .step strong { color: #b45309; }
 .step p { margin: 8px 0 0; font-size: .92rem; }
+
+/* ---------- Lección 3: consigna bilingüe, reglas, comparaciones ---------- */
+.instruction { margin-bottom: 14px; }
+.instruction-en { font-weight: 600; margin: 0 0 6px; }
+.es-toggle { background: var(--primary-soft); color: var(--primary); border: 1px solid var(--primary-soft); border-radius: 999px; padding: 4px 12px; font-size: .85rem; font-weight: 700; cursor: pointer; }
+.es-toggle:hover { border-color: var(--primary); }
+.instruction-es { margin: 8px 0 0; padding: 8px 12px; border-left: 3px solid var(--primary); background: var(--surface-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-style: italic; color: var(--text-2); }
+
+.rule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 15px 0; }
+.rule-card { background: var(--surface-2); border: 1px solid var(--border); border-top: 4px solid var(--verb-text); border-radius: var(--radius-sm); padding: 14px; }
+.rule-card h4 { margin: 0 0 4px; font-size: 1rem; }
+.rule-when { font-size: .85rem; color: var(--muted); margin-bottom: 8px; }
+.rule-example { display: block; margin: 6px 0; }
+
+.compare-title { margin: 16px 0 6px; }
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.compare-cell { border-radius: var(--radius-sm); padding: 12px 14px; font-size: .95rem; border: 1px solid var(--border); background: var(--surface); }
+.compare-cell.literal { background: #fff1f2; border-color: #fecdd3; }
+.compare-cell.natural { background: #f0fdf4; border-color: #bbf7d0; }
+.compare-cell.pair { background: #fff1f2; border-color: #fecdd3; }
+.compare-label { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+.compare-cell.literal .compare-label { color: #be123c; }
+.compare-cell.natural .compare-label { color: #15803d; }
+.compare-cell.pair .compare-label { color: #9f1239; }
+.compare-note { font-size: .85rem; margin-top: 6px; color: #166534; }
+@media (max-width: 560px) { .compare-row { grid-template-columns: 1fr; } }
+
+.word-btn.correct { border-color: #10b981; background: var(--success-bg); }
+.word-btn.wrong { border-color: #ef4444; background: var(--error-bg); }
+.exercise-box .choice > p { text-align: center; font-size: 1.05rem; }
+.exercise-box .choice .word-selector { justify-content: center; }
+.review-box .small { font-size: .9rem; margin: 8px 0 0; }

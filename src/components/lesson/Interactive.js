@@ -58,20 +58,29 @@ export function WordPicker({ prompt, options, answer }) {
 /**
  * Pregunta de opción múltiple con corrección inmediata:
  * <Choice question="¿…?" options=${['A) …','B) …']} answer=${0} />
+ *
+ * Opcionales:
+ *  - hints:   una pista por opción (la de la respuesta correcta puede ir vacía).
+ *             Se muestra al elegir esa opción incorrecta.
+ *  - success: texto si acierta.  - error: texto genérico si falla (sin pista).
+ *  - inline:  opciones como botones en fila (para completar huecos).
  */
-export function Choice({ question, options, answer }) {
+export function Choice({ question, options, answer, hints, success, error, inline }) {
   const [picked, setPicked] = useState(null);
   const ok = picked === answer;
+  const okText = success || '✔ ¡Excelente! Respuesta correcta.';
+  const errText = (hints && hints[picked]) ? '❓ ' + hints[picked]
+    : (error || '✖ Respuesta incorrecta. Lee con atención el texto e inténtalo de nuevo.');
+  const cls = (i) => (inline ? 'word-btn' : 'interactive-option') + (picked === i ? (ok ? ' correct' : ' wrong') : '');
+  const items = options.map((o, i) => (inline
+    ? html`<button type="button" class=${cls(i)} onClick=${() => setPicked(i)}>${o}</button>`
+    : html`<div role="button" tabindex="0" class=${cls(i)}
+        onClick=${() => setPicked(i)} onKeyDown=${(e) => e.key === 'Enter' && setPicked(i)}>${o}</div>`));
   return html`
     <div class="choice">
       ${question ? html`<p><strong>${question}</strong></p>` : null}
-      ${options.map((o, i) => html`
-        <div role="button" tabindex="0"
-          class=${'interactive-option' + (picked === i ? (ok ? ' correct' : ' wrong') : '')}
-          onClick=${() => setPicked(i)} onKeyDown=${(e) => e.key === 'Enter' && setPicked(i)}>${o}</div>`)}
-      <${Feedback} result=${picked == null ? null : ok
-        ? { ok: true, text: '✔ ¡Excelente! Respuesta correcta.' }
-        : { ok: false, text: '✖ Respuesta incorrecta. Lee con atención el texto e inténtalo de nuevo.' }} />
+      ${inline ? html`<div class="word-selector">${items}</div>` : items}
+      <${Feedback} result=${picked == null ? null : { ok, text: ok ? okText : errText }} />
     </div>`;
 }
 

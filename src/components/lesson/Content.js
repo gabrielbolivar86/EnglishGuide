@@ -1,4 +1,4 @@
-import { html } from '../../lib/preact.js';
+import { html, useState } from '../../lib/preact.js';
 import { Hl } from './Grammar.js';
 
 /** Vocabulario: <Vocab items=${[['Wake up','Despertarse'], …]} /> */
@@ -80,4 +80,58 @@ export function StepsGuide({ title, steps }) {
         ${steps.map((st) => html`<div class="step"><strong>${st.title}</strong><p>${st.body}</p></div>`)}
       </div>
     </section>`;
+}
+
+/**
+ * Consigna en inglés con traducción al español que se muestra/oculta:
+ * <Instruction es="Selecciona la opción correcta.">Select the correct option.<//>
+ */
+export function Instruction({ es, children }) {
+  const [open, setOpen] = useState(false);
+  return html`
+    <div class="instruction">
+      <p class="instruction-en">${children}</p>
+      <button type="button" class="es-toggle" onClick=${() => setOpen(!open)}>
+        ${open ? '🙈 Ocultar español / Hide Spanish' : '👁️ Ver en español / Show Spanish'}
+      </button>
+      ${open ? html`<p class="instruction-es">${es}</p>` : null}
+    </div>`;
+}
+
+/**
+ * Tarjetas de reglas:
+ * <RuleCards rules=${[{ title: '+s', when: 'La mayoría', examples: [['cook','cooks']] }]} />
+ * Cada ejemplo [base, resultado] se muestra "base → resultado" (resultado en color verbo).
+ */
+export function RuleCards({ rules, t = 'verb' }) {
+  return html`
+    <div class="rule-grid">
+      ${rules.map((r) => html`
+        <div class="rule-card">
+          <h4>${r.title}</h4>
+          ${r.when ? html`<div class="rule-when">${r.when}</div>` : null}
+          ${(r.examples || []).map(([a, b]) => html`<span class="rule-example">${a} → <${Hl} t=${t}>${b}<//></span>`)}
+        </div>`)}
+    </div>`;
+}
+
+/**
+ * Comparación lado a lado (literal vs. natural, o dos usos):
+ * <Compare title='"Voy al trabajo"' left=${{ label: '✖ Literal', body: 'I go to the work.' }}
+ *   right=${{ label: '✔ Natural', body: html`…`, note: '…' }} />
+ * variant: 'fix' (rojo/verde, por defecto) | 'pair' (dos tarjetas neutras)
+ */
+export function Compare({ title, left, right, variant = 'fix' }) {
+  const cell = (c, kind) => html`
+    <div class=${'compare-cell ' + kind}>
+      <div class="compare-label">${c.label}</div>
+      <div>${c.body}</div>
+      ${c.note ? html`<div class="compare-note">${c.note}</div>` : null}
+    </div>`;
+  return html`
+    ${title ? html`<p class="compare-title"><strong>${title}</strong></p>` : null}
+    <div class="compare-row">
+      ${cell(left, variant === 'fix' ? 'literal' : 'pair')}
+      ${cell(right, variant === 'fix' ? 'natural' : 'pair')}
+    </div>`;
 }

@@ -6,6 +6,7 @@ export const GRAMMAR = {
   subject:    { cls: 'hl-subject',    label: 'Sujeto' },
   verb:       { cls: 'hl-verb',       label: 'Verbo Acción' },
   complement: { cls: 'hl-complement', label: 'Complemento / Hora' },
+  preposition: { cls: 'hl-preposition', label: 'Preposición / Artículo' },
 };
 
 /** Resaltador: <Hl t="verb">wake up<//> */
@@ -26,7 +27,7 @@ export function ColorLegend({ items = Object.keys(GRAMMAR), labels = {} }) {
 
 /** Fórmula: <Formula parts=${['connector','subject','verb','complement']} /> */
 export function Formula({ parts, labels = {} }) {
-  const def = { connector: '[Conector]', subject: '[Sujeto]', verb: '[Verbo]', complement: '[Complemento]' };
+  const def = { connector: '[Conector]', subject: '[Sujeto]', verb: '[Verbo]', complement: '[Complemento]', preposition: '[Preposición]' };
   return html`
     <div class="formula-box">
       ${parts.map((p, i) => html`${i ? ' + ' : ''}<${Hl} t=${p}>${labels[p] || def[p] || p}<//>`)}

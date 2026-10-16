@@ -91,6 +91,13 @@ Todos se importan desde `src/components/lesson/index.js`:
 | `Timer` | Cronómetro regresivo |
 | `WritingCheck` | Escritura con "Revisión Visual" de conectores y verbos |
 | `StructuredReading` | Lectura con botón "Ver Estructura" que la colorea |
+| `Instruction` | Consigna en inglés con botón "Ver en español" (`es="…"`) |
+| `RuleCards` | Tarjetas de reglas con ejemplos `base → resultado` |
+| `Compare` | Comparación lado a lado: literal vs. natural (`variant="pair"` para dos usos) |
+| `WritingGoals` | Escritura con metas medibles (nº de oraciones, palabras exactas, errores típicos) |
+
+`Choice` acepta además `inline` (opciones como botones), `hints` (una pista por opción incorrecta), `success` y `error`.
+`Hl`, `ColorLegend` y `VocabColumns` aceptan el color `preposition` (rosa: to, a, an, my, the).
 
 ¿Necesitas un bloque nuevo? Créalo en `src/components/lesson/` y expórtalo en su `index.js`. Queda disponible para todas las lecciones.
 

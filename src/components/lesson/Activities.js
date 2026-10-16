@@ -148,6 +148,43 @@ export function WritingCheck({ placeholder, rows = 6, connectors = [], verbs = [
       </div>` : null}`;
 }
 
+const countWord = (text, w) => (text.match(new RegExp(`\\b${w}\\b`, 'g')) || []).length;
+
+/**
+ * Escritura con metas medibles (palabra completa, no "so" dentro de "also"):
+ * <WritingGoals sentences=${6} targets=${{ because: 2, so: 2, also: 2 }}
+ *   checks=${[{ pattern: /\bgo to the work\b/g, tip: 'Rutinas fijas sin "the"' }]}
+ *   note="Revisa la -s de cada verbo." />
+ * `tip` puede ser texto o función (coincidencias) => texto.
+ */
+export function WritingGoals({ placeholder, rows = 7, sentences = 0, targets = {}, checks = [], note }) {
+  const [text, setText] = useState('');
+  const [review, setReview] = useState(null);
+  const run = () => {
+    const t = text.toLowerCase();
+    const n = text.split(/[.!?]+/).filter((s) => s.trim()).length;
+    const counts = Object.entries(targets).map(([w, min]) => ({ w, min, n: countWord(t, w) }));
+    const tips = checks.map(({ pattern, tip }) => {
+      const m = t.match(pattern);
+      return m ? (typeof tip === 'function' ? tip(m) : tip) : null;
+    }).filter(Boolean);
+    setReview({ n, counts, tips, ok: n >= sentences && counts.every((c) => c.n >= c.min) });
+  };
+  return html`
+    <textarea rows=${rows} placeholder=${placeholder} value=${text} onInput=${(e) => setText(e.currentTarget.value)}></textarea>
+    <button type="button" class="word-btn mt" onClick=${run}>🔎 Revisión Visual</button>
+    ${review ? html`
+      <div class="review-box">
+        <strong>${review.ok ? '✔ ¡Meta cumplida!' : '💡 Vas bien. Revisa la lista y completa lo que falta.'}</strong>
+        <ul>
+          ${sentences ? html`<li>Oraciones: ${review.n} / ${sentences}</li>` : null}
+          ${review.counts.map((c) => html`<li><${Hl} t="connector">${c.w}<//>: ${c.n} / ${c.min}</li>`)}
+          ${review.tips.map((tip) => html`<li>${tip}</li>`)}
+        </ul>
+        ${note ? html`<p class="small">${note}</p>` : null}
+      </div>` : null}`;
+}
+
 /**
  * Texto de lectura con botón para revelar su estructura gramatical.
  * `parts`: strings (texto normal) y pares [tipo, texto] (texto que se colorea).
